@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories xmlns="http://tiendat.io/schema/categories"                  
+            link_guitar_badon="http://guitarbadon.vn"
+            link_gutiar_station="https://guitar.station.vn/product-category/dan-guitar"
+            link_nhaccu_tiendat="https://nhaccutiendat.vn/dan-guitar"
+            link_duy="https://guitartphcm.com"
+            schemaCategory="http://tiendat.io/schema/category"
+            schemaGuitar="http://tiendat.io/schema/guitar">
+</categories>

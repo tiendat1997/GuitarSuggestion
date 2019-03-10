@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:category xmlns="http://tiendat.io/schema/guitar" xmlns:ns2="http://tiendat.io/schema/attribute" xmlns:ns3="http://tiendat.io/schema/category" categoryName="Đàn Guitar Nước Ngoài" link="https://guitar.station.vn/product-category/dan-guitar/dan-guitar-nuoc-ngoai/">
+    <guitar>
+        <name>Guitar Acoustic Yamaha F310</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3200000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2017/12/Yamaha-f310-vertical-top.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Indonesia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng đầy</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Thông Sitka (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Meranti</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Nato</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO-NXT 018</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>2690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2017/10/EKO-NXT-Copy.png</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng OM</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO NXT 018 EQ</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/01/EKO-A-EQ-N-top-2.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng A, thùng khuyết vừa</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic FENDER &amp;#8211; FA-100</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>2790000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/06/FA-100-TOP.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Trung Quốc</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng đầy</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Thông Sitka (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mapple</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Mun</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO-NXT-D-Natural</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>2690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/01/EKO-NXT-EQ-DC-N-3.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng đầy</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO D CW EQ Natural</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/01/EKO-NXT-EQ-DC-N-2.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng khuyết</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic Epiphone DR-100-Natural</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3190000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/01/dan-guitar-acoustic-epiphone-dr100-chinh-hang-5.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Trung Quốc</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng đầy</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Thông Sitka (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO-EQ-Blue</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/03/EKO-RANGER-EQ-BLUE-DC-TOP-7.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng khuyết</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO-EQ-Red</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/03/EKO-RANGER-EQ-REED-DCpng.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng khuyết</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO-EQ-Blue-A</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/08/EKO-BLUE-EQ-A-TOP.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng A, thùng khuyết tròn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic EKO-EQ-Black-A</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>3690000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/08/EKO-BLACK-EQ-A-TOP.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Italia</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng A, thùng khuyết tròn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Laminate</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Cẩm Ấn</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+    <guitar>
+        <name>Guitar Acoustic MAGNA &amp;#8211; M-91C-NAT</name>
+        <category>Đàn Guitar Nước Ngoài</category>
+        <price>2790000</price>
+        <imageUrl>https://guitar.station.vn/wp-content/uploads/2018/12/magna-top.jpg</imageUrl>
+        <attributes>
+            <ns2:attribute>
+                <ns2:name>Xuất xứ</ns2:name>
+                <ns2:content>Trung Quốc</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Kiểu dáng</ns2:name>
+                <ns2:content>Dáng D, thùng khuyết</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt trước</ns2:name>
+                <ns2:content>Gỗ Agathis (Laminate)</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Lưng &amp; hông</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Cần đàn</ns2:name>
+                <ns2:content>Gỗ Còng Cườm</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Mặt cần</ns2:name>
+                <ns2:content>Gỗ Ebony</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Đầu cần đàn</ns2:name>
+                <ns2:content>Gỗ Mahogany</ns2:content>
+            </ns2:attribute>
+            <ns2:attribute>
+                <ns2:name>Ti chỉnh cong cần</ns2:name>
+                <ns2:content>Có ti chỉnh cong cần</ns2:content>
+            </ns2:attribute>
+        </attributes>
+    </guitar>
+</ns3:category>

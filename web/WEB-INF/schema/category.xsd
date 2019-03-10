@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://tiendat.io/schema/category"
+           xmlns="http://tiendat.io/schema/category"
+           xmlns:g="http://tiendat.io/schema/guitar"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://tiendat.io/schema/guitar" schemaLocation="guitar.xsd"/>
+    <xs:element name="category">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="g:guitar" minOccurs="0" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="categoryName" type="xs:string"/>
+            <xs:attribute name="link" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

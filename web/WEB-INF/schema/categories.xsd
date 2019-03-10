@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://tiendat.io/schema/categories"
+           xmlns="http://tiendat.io/schema/categories"
+           xmlns:c="http://tiendat.io/schema/category"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://tiendat.io/schema/category" schemaLocation="category.xsd"/>
+    <xs:element name="categories">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="c:category" minOccurs="0" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

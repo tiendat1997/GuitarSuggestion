@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categories xmlns="http://tiendat.io/schema/categories"
+         link="https://guitar.station.vn/product-category/dan-guitar"
+         host="https://guitar.station.vn"         
+         schemaCategory="http://tiendat.io/schema/category"
+         schemaGuitar="http://tiendat.io/schema/guitar">
+    
+</categories>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://tiendat.io/schema/guitar"
+           xmlns="http://tiendat.io/schema/guitar"
+           xmlns:a="http://tiendat.io/schema/attribute"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://tiendat.io/schema/attribute" schemaLocation="attribute.xsd"/>
+    <xs:element name="guitar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"></xs:element>
+                <xs:element name="name">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="category">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="price" type="xs:decimal" default="0"></xs:element>
+                <xs:element name="imageUrl" type="xs:anyURI" ></xs:element>                  
+                <xs:element name="weightedScore" type="xs:decimal"></xs:element>
+                <xs:element name="attributes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="a:attribute" minOccurs="0" maxOccurs="unbounded"></xs:element>                        
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>                            
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

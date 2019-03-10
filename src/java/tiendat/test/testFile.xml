@@ -1,0 +1,1833 @@
+<body class="">
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8L5QNG" width="0" style="display:none;visibility:hidden" height="0"></iframe>
+    </noscript>
+    <div style="position: relative" id="header" class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="support-link login-link">
+                    <a href="javascript:void(0);" class="first-item cd-signin">
+                        <i aria-hidden="true" class="fa fa-sign-in"></i>Đăng nhập</a>
+                    <a href="javascript:void(0);" class="cd-signup">
+                        <i aria-hidden="true" class="fa fa-user"></i>Đăng ký</a>
+                </div>
+            </div>
+        </div>
+        <div class="container"></div>
+        <div class="container main-header">
+            <div class="row">
+                <div class="logo">
+                    <a href="https://nhaccutiendat.vn">
+                        <img src="/upload/images/logo/logo-tiendat.png" alt="Nhạc cụ, đàn organ, đàn guitar, đàn piano cung cấp bởi Tiến Đạt" title="Nhạc cụ, đàn organ, đàn guitar, đàn piano cung cấp bởi Tiến Đạt" class="img-logo"/>
+                    </a>
+                </div>
+                <div class="header-search-box">
+                    <form role="search" method="get" action="/tim-kiem.html?q=" id="frmSearch" class="searchform">
+                        <div class="form-group">
+                            <input name="q" id="q" placeholder="Tìm kiếm từ khóa không dấu hoặc có dấu" type="text" class="form-control" value=""/>
+                            <button onclick="$(&apos;#frmSearch&apos;).submit();" id="btnSearch" type="submit" class="fa fa-search"></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="cart-location-block">
+                    <a onclick="AddToCart(&apos;0&apos;,&apos;0&apos;)" href="javascript:void(0);" class="header_shoppingcart">
+                        <b>Giỏ hàng</b>
+                        <br/>
+                        <span id="cart_count">0</span>sản phẩm</a>
+                    <a data-toggle="tooltip" data-placement="bottom" onclick="PopupRegion();" href="javascript:void(0);" title="Bấm để thay đổi vị trí của quý khách" class="header_location">
+                        <span>Vị trí của bạn</span>
+                        <br/>
+                        <b>Không rõ<i aria-hidden="true" class="fa fa-caret-down"></i></b>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="nav-top-menu" class="nav-top-menu">
+            <div class="container">
+                <div class="row">
+                    <div id="main-menu" class="col-sm-12 main-menu">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button data-target="#navbar" data-toggle="collapse" aria-controls="navbar" aria-expanded="false" type="button" class="navbar-toggle collapsed">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                    <a href="#" class="navbar-brand">MENU</a>
+                                </div>
+                                <div id="navbar" class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li class="">
+                                            <a data-toggle="" href="https://nhaccutiendat.vn/" class="">Trang chủ</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/danpiano/" class="dropdown-toggle" target="_self">Đàn Piano</a>
+                                            <ul role="menu" style="width: 1200px;" class="dropdown-menu mega_dropdown">
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-yamaha/">
+                                                                <img src="/upload/images/logo/YAMAHA.png" alt="Đàn Piano Yamaha" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-yamaha/">Đàn Piano Yamaha</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-yamaha-dien/">Đàn Piano Yamaha điện</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/dan-piano-yamaha-co/">Đàn Piano Yamaha cơ</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-piano-yamaha/" title="Tất cả danh mục Đàn Piano Yamaha">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-casio/">
+                                                                <img src="/upload/images/logo/casio.png" alt="Đàn Piano Casio" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-casio/">Đàn Piano Casio</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/digital-celviano-ap/">Digital Celviano AP</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/digital-privia-px/">Digital Privia PX</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-piano-casio/" title="Tất cả danh mục Đàn Piano Casio">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-roland/">
+                                                                <img src="/upload/images/logo/rolan.png" alt="Đàn Piano Roland" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-roland/">Đàn Piano Roland</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/hp-series/">HP Series</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/rp-series/">RP Series</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-piano-roland/" title="Tất cả danh mục Đàn Piano Roland">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-kawai/">
+                                                                <img src="/upload/images/logo/kawai.png" alt="Đàn Piano Kawai" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-piano-kawai/">Đàn Piano Kawai</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/upright-piano-kawai/">Upright Piano Kawai</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/grand-piano-kawai/">Grand Piano Kawai</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-piano-kawai/" title="Tất cả danh mục Đàn Piano Kawai">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li style="clear: both; height: 20px"></li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="link_container group_header">
+                                                            <a href="http://pianotiendat.vn/" target="_blank">Đàn Piano đã qua sử dụng<i aria-hidden="true" class="fa fa-external-link"></i></a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="http://pianotiendat.vn/" title="Tất cả danh mục Đàn Piano đã qua sử dụng" target="_blank">
+                                                                <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                <i>Xem tất cả danh mục</i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/danorgan/" class="dropdown-toggle" target="_self">Đàn Organ</a>
+                                            <ul role="menu" style="width: 1200px;" class="dropdown-menu mega_dropdown">
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-organ-yamaha/">
+                                                                <img src="/upload/images/logo/YAMAHA.png" alt="Đàn Organ Yamaha" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-organ-yamaha/">Đàn Organ Yamaha</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/psr-series/">PSR Series</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/dgx-series/">DGX Series</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/genos/">Genos</a>
+                                                                    <li class="link_container">
+                                                                        <a href="https://nhaccutiendat.vn/motif-xf-wh-series/">MOTIF XF WH Series</a>
+                                                                        <li class="link_container">
+                                                                            <a href="https://nhaccutiendat.vn/motif-xf-series/">MOTIF XF Series</a>
+                                                                            <li class="link_container">
+                                                                                <a href="https://nhaccutiendat.vn/montage-series/">MONTAGE Series</a>
+                                                                                <li class="link_container">
+                                                                                    <a href="https://nhaccutiendat.vn/dan-organ-yamaha/" title="Tất cả danh mục Đàn Organ Yamaha">
+                                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                                        <i>Xem tất cả danh mục</i>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </li>
+                                                                        </li>
+                                                                    </li>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-organ-casio/">
+                                                                <img src="/upload/images/logo/casio.png" alt="Đàn Organ Casio" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-organ-casio/">Đàn Organ Casio</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/standard-keyboard-ctk/">Standard KeyBoard(CTK)</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/key-lighting-keyboard-lk/">Key Lighting KeyBoard (LK)</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/high-grade-keyboard-wk/">High-Grade KeyBoard (WK)</a>
+                                                                    <li class="link_container">
+                                                                        <a href="https://nhaccutiendat.vn/dan-organ-casio/" title="Tất cả danh mục Đàn Organ Casio">
+                                                                            <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                            <i>Xem tất cả danh mục</i>
+                                                                        </a>
+                                                                    </li>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-organ-roland/">
+                                                                <img src="/upload/images/logo/rolan.png" alt="Đàn Organ Roland" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-organ-roland/">Đàn Organ Roland</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-organ-roland/" title="Tất cả danh mục Đàn Organ Roland">
+                                                                <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                <i>Xem tất cả danh mục</i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/dan-guitar/" class="dropdown-toggle" target="_self">Đàn guitar</a>
+                                            <ul role="menu" style="width: 1200px;" class="dropdown-menu mega_dropdown">
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-gutiar-cho-tre-em/">Đàn Guitar cho trẻ em</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-gutiar-cho-tre-em/" title="Tất cả danh mục Đàn Guitar cho trẻ em">
+                                                                <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                <i>Xem tất cả danh mục</i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-guitar-viet-nam/">Đàn Guitar Việt Nam</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/acoustic-guitar1/">Acoustic Guitar</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/classical-guitar1/">Classical Guitar</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-guitar-viet-nam/" title="Tất cả danh mục Đàn Guitar Việt Nam">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-guitar-pho-thong/">Đàn Guitar phổ thông</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/guitar-acoustic/">Acoustic Guitar</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/guitar-classical/">Classical Guitar</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-guitar-pho-thong/" title="Tất cả danh mục Đàn Guitar phổ thông">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-guitar-yamaha/">
+                                                                <img src="/upload/images/logo/YAMAHA.png" alt="Đàn Guitar Yamaha" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-guitar-yamaha/">Đàn Guitar Yamaha</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/">Acoustic Guitar</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/classic-guitar/">Classic Guitar</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/electric-guitar/">Electric Guitar</a>
+                                                                    <li class="link_container">
+                                                                        <a href="https://nhaccutiendat.vn/dan-guitar-yamaha/" title="Tất cả danh mục Đàn Guitar Yamaha">
+                                                                            <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                            <i>Xem tất cả danh mục</i>
+                                                                        </a>
+                                                                    </li>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li style="clear: both; height: 20px"></li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-guitar-valote/">
+                                                                <img src="/upload/images/logo/valote2.png" alt="Đàn Guitar VALOTE" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-guitar-valote/">Đàn Guitar VALOTE</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/guitar-acoustic-1/">Acoustic Guitar</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/classic-guitar-1/">Classic Guitar</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-guitar-valote/" title="Tất cả danh mục Đàn Guitar VALOTE">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-gutiar-takamine/">
+                                                                <img src="/upload/images/logo/takamine.png" alt="Đàn Gutiar TAKAMINE" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-gutiar-takamine/">Đàn Gutiar TAKAMINE</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/classic-guitar28/">Classic Guitar</a>
+                                                            <li class="link_container">
+                                                                <a href="https://nhaccutiendat.vn/acoustic-guitar20/">Acoustic Guitar</a>
+                                                                <li class="link_container">
+                                                                    <a href="https://nhaccutiendat.vn/dan-gutiar-takamine/" title="Tất cả danh mục Đàn Gutiar TAKAMINE">
+                                                                        <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                        <i>Xem tất cả danh mục</i>
+                                                                    </a>
+                                                                </li>
+                                                            </li>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="block-container col-sm-3">
+                                                    <ul class="block">
+                                                        <li class="img_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-gutiar-fender/">
+                                                                <img src="/upload/images/logo/fender.png" alt="Đàn Gutiar FENDER" class="img-responsive"/>
+                                                            </a>
+                                                        </li>
+                                                        <li class="link_container group_header">
+                                                            <a href="https://nhaccutiendat.vn/dan-gutiar-fender/">Đàn Gutiar FENDER</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/dan-gutiar-fender/" title="Tất cả danh mục Đàn Gutiar FENDER">
+                                                                <i aria-hidden="true" class="fa fa-caret-down"></i>
+                                                                <i>Xem tất cả danh mục</i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown level0 drop-menu">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/dan-ukulele/" class="dropdown-toggle">Đàn UKulele</a>
+                                            <ul class="dropdown-menu container-fluid menu-type-3">
+                                                <li class="block-container">
+                                                    <ul class="block">
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/ukulele-soprano/">Ukulele Soprano</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/ukulele-concert/">Ukulele Concert</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/ukulele-tenor/">Ukulele Tenor</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown level0 drop-menu">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/trong-amply/" class="dropdown-toggle">TRỐNG - AMPLY</a>
+                                            <ul class="dropdown-menu container-fluid menu-type-3">
+                                                <li class="block-container">
+                                                    <ul class="block">
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/trong-dien-tu/">Trống Điện Tử</a>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/trong-dien-tu-yamaha/">Trống điện tử Yamaha</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/trong-dien-tu-roland/">Trống điện tử ROLAND</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/amply/">AMPLY</a>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/amply-yamaha/">Amply Yamaha</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/amply-roland/">Amply Roland</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/amply-fender/">Amply Fender</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/trong-cajon/">Trống CAJON</a>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/trong-cajon-hippo/">Trống cajon HIPPO</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/trong-cajon-nissi/">Trống cajon NISSI</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown level0 drop-menu">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/nhac-cu-khac/" class="dropdown-toggle">Nhạc cụ khác</a>
+                                            <ul class="dropdown-menu container-fluid menu-type-3">
+                                                <li class="block-container">
+                                                    <ul class="block">
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/sao-tieu-yamaha/">Sáo tiêu - RECORDER</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/effect-roland/">EFFECT Roland</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/sao-viet-nam/">Sáo Việt Nam</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/ken-melodion/">Kèn MELODION</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/ken-harmonica/">Kèn HARMONICA</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown level0 drop-menu">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/phu-kien/" class="dropdown-toggle">Phụ kiện</a>
+                                            <ul class="dropdown-menu container-fluid menu-type-3">
+                                                <li class="block-container">
+                                                    <ul class="block">
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/phu-kien-dan-organ/">Phụ kiện Đàn Organ</a>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/adapter-nguon/">Adapter (Nguồn)</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/pedal/">Pedal</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/bao-da/">Bao Da</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/chan-dan/">Chân Đàn</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/ghe-dan/">Ghế đàn</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/khan-phu-sach-organ/">Khăn phủ - Sách Organ</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/the-nho/">Thẻ nhớ</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/phu-kien-dan-guitar/">Phụ kiện Guitar</a>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/eq-guitar-pickup/">EQ Guitar - Pickup</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/day-dan-strings/">Dây đàn - Strings</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/gia-do-stands/">Giá đỡ - Stands</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/capo-guitar/">Capo Guitar</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/hop-dan-bao-dan/">Hộp đàn - Bao đàn</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/may-len-day/">Máy lên dây</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/phu-kien-khac1/">Phụ kiện khác</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/phu-kien-ukulele/">Phụ kiện Ukulele</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/phu-kien-dan-piano/">Phụ kiện Piano</a>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/khan-phu-dan-piano/">Khăn phủ đàn Piano</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/ghe-dan-piano/">Ghế đàn Piano</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/may-dem-nhip/">Máy đếm nhịp</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/sach-hoc-nhac/">Sách học nhạc</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/phu-kien-khac/">Phụ kiện khác</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/phu-kien-trong-dien-tu/">Phụ kiện Trống điện tử</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown level0 drop-menu">
+                                            <a data-toggle="dropdown" href="https://nhaccutiendat.vn/tin/tin-tuc/" class="dropdown-toggle">Tin tức</a>
+                                            <ul class="dropdown-menu container-fluid menu-type-3">
+                                                <li class="block-container">
+                                                    <ul class="block">
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/tin/tu-van-kinh-nghiem/">Tư vấn/Kinh nghiệm</a>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/tin/dan-piano/">Đàn Piano</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/tin/tin-dan-guitar/">Đàn Guitar</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/tin/dan-organ/">Đàn Organ</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="https://nhaccutiendat.vn/tin/tin-nhac-cu-khac/">Nhạc cụ khác</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/tin/khuyen-mai/">Khuyến mại</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/tin/tuyen-dung/">Tuyển dụng</a>
+                                                        </li>
+                                                        <li class="link_container">
+                                                            <a href="https://nhaccutiendat.vn/style-nhac.html">Style Nhạc</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container"></div>
+    </div>
+    <div style="display: none">
+        <div id="contact-model-popup">
+            <div class="support-ajax">
+                <div style="width: 600px;" id="sang">
+                    <div style="margin-bottom: 15px" class="box-contact"></div>
+                    <span id="lb_LiveChat">
+                        <div class="widget">
+                            <table cellpadding="3" width="100%" cellspacing="2" style="border: 1px solid #dbdbdb" class="sTable">
+                                <thead>
+                                    <tr>
+                                        <td>STT</td>
+                                        <td>Hỗ trợ viên</td>
+                                        <td>Skype</td>
+                                        <td>Số máy lẻ</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="font-weight: bold; color: #29367D" id="ctl01_tr_bac">
+                                        <td colspan="4">PHÍA BẮC</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ms. Mơ</td>
+                                        <td>
+                                            <a href="skype:nguyenmo21692?chat">
+                                                <img src="https://nhaccutiendat.vn/templates/v1//images/skype-image1.png" width="60px"/>
+                                            </a>
+                                        </td>
+                                        <td>090.321.6609</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mr. Đức Anh</td>
+                                        <td>
+                                            <a href="skype:ddanh94?chat">
+                                                <img src="https://nhaccutiendat.vn/templates/v1//images/skype-image1.png" width="60px"/>
+                                            </a>
+                                        </td>
+                                        <td>098 1174788‬</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Ms. Tuyết - Bán Sỉ</td>
+                                        <td>
+                                            <a href="skype:hoatuyet1911?chat">
+                                                <img src="https://nhaccutiendat.vn/templates/v1//images/skype-image1.png" width="60px"/>
+                                            </a>
+                                        </td>
+                                        <td>0904.82.1381</td>
+                                    </tr>
+                                    <tr style="font-weight: bold; color: #29367D" id="ctl01_tr_nam">
+                                        <td colspan="4">PHÍA NAM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mr. Quân</td>
+                                        <td>
+                                            <a href="skype:tranquan.nhaccutiendathcm?chat">
+                                                <img src="https://nhaccutiendat.vn/templates/v1//images/skype-image1.png" width="60px"/>
+                                            </a>
+                                        </td>
+                                        <td>0909 015 886</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mr. Thắng</td>
+                                        <td>
+                                            <a href="skype:0938937775?chat">
+                                                <img src="https://nhaccutiendat.vn/templates/v1//images/skype-image1.png" width="60px"/>
+                                            </a>
+                                        </td>
+                                        <td>0938.77.0002</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Ms. Oanh - Bán Sỉ</td>
+                                        <td>
+                                            <a href="skype:oanhkim223?chat">
+                                                <img src="https://nhaccutiendat.vn/templates/v1//images/skype-image1.png" width="60px"/>
+                                            </a>
+                                        </td>
+                                        <td>0904.83.1381</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-page">
+        <div class="container">
+            <div class="breadcrumb-box">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="https://nhaccutiendat.vn">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="https://nhaccutiendat.vn/dan-guitar/">Đàn guitar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div id="left_column" class="column col-xs-12 col-sm-3">
+                    <div class="side-nav-categories home-cat-list">
+                        <div class="block-title">Đàn guitar</div>
+                        <div class="box-content box-category">
+                            <div>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-yamaha/" class="">Đàn Guitar Yamaha</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/acoustic-guitar/" class="">Acoustic Guitar</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/classic-guitar/" class="">Classic Guitar</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/electric-guitar/" class="">Electric Guitar</a>
+                            </div>
+                            <div>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-pho-thong/" class="">Đàn Guitar phổ thông</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/guitar-acoustic/" class="">Acoustic Guitar</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/guitar-classical/" class="">Classical Guitar</a>
+                            </div>
+                            <div>
+                                <a href="https://nhaccutiendat.vn/dan-gutiar-cho-tre-em/" class="">Đàn Guitar cho trẻ em</a>
+                            </div>
+                            <div>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-viet-nam/" class="">Đàn Guitar Việt Nam</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/acoustic-guitar1/" class="">Acoustic Guitar</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/classical-guitar1/" class="">Classical Guitar</a>
+                            </div>
+                            <div>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-valote/" class="">Đàn Guitar VALOTE</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/guitar-acoustic-1/" class="">Acoustic Guitar</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/classic-guitar-1/" class="">Classic Guitar</a>
+                            </div>
+                            <div>
+                                <a href="https://nhaccutiendat.vn/dan-gutiar-takamine/" class="">Đàn Gutiar TAKAMINE</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/classic-guitar28/" class="">Classic Guitar</a>
+                            </div>
+                            <div class="child open">
+                                <a href="https://nhaccutiendat.vn/acoustic-guitar20/" class="">Acoustic Guitar</a>
+                            </div>
+                            <div>
+                                <a href="https://nhaccutiendat.vn/dan-gutiar-fender/" class="">Đàn Gutiar FENDER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="description">
+                        <div class="banner-static-top">
+                            <div class="row"></div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>
+                                <a href="https://nhaccutiendat.vn/dan-gutiar-cho-tre-em/">Đàn Guitar cho trẻ em</a>
+                            </h1>
+                            <a href="https://nhaccutiendat.vn/dan-gutiar-cho-tre-em/" title="Đàn Guitar cho trẻ em" class="view-more">
+                                <i aria-hidden="true" class="fa fa-external-link"></i>Xem thêm</a>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="category-inner">
+                            <div class="home-category-col2 category-col-full">
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-classic-guitar-cgs102a.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Classic-Guitar-CGS102A2.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Classic Guitar CGS102A"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;518&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-classic-guitar-cgs102a.html">Đàn Classic Guitar CGS102A</a>
+                                        </p>
+                                        <div class="price">2.850.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-classic-guitar-gc-11hv.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Classic-Guitar-GC-11HM-103.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Classic Guitar GC - 11HV"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;697&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-classic-guitar-gc-11hv.html">Đàn Classic Guitar GC - 11HV</a>
+                                        </p>
+                                        <div class="price">1.100.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-mini-dam2.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Classic-Mini-Dam-2.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Classic Mini Dam 2"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;752&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-mini-dam2.html">Đàn Guitar Classic Mini Dam 2</a>
+                                        </p>
+                                        <div class="price">1.200.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-valote-vc-101fb.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Classic-VALOTE-VC-101FB-233.JPG?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Classic VALOTE VC-101FB"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1009&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-valote-vc-101fb.html">Đàn Guitar Classic VALOTE VC-101FB</a>
+                                        </p>
+                                        <div class="price">1.600.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-classic-valote-vc-301fb.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Classic-VALOTE-VC-301FB-221.JPG?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Classic VALOTE VC-301FB"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1014&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-classic-valote-vc-301fb.html">Đàn Guitar Classic VALOTE VC-301FB</a>
+                                        </p>
+                                        <div class="price">Vui lòng liên hệ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-valote-vc-303fb.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Classic-VALOTE-VC-303FB.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Classic VALOTE VC-303FB"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1015&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-valote-vc-303fb.html">Đàn Guitar Classic VALOTE VC-303FB</a>
+                                        </p>
+                                        <div class="price">3.250.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-classic-yamaha-gl1.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Classic-Yamaha-GL1.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Classic Yamaha GL1"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1035&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-classic-yamaha-gl1.html">Đàn Guitar Classic Yamaha GL1</a>
+                                        </p>
+                                        <div class="price">1.970.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-acoustic-yamaha-jr1.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Yamaha-JR1.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Yamaha JR1"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1036&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-acoustic-yamaha-jr1.html">Đàn Guitar Acoustic Yamaha JR1</a>
+                                        </p>
+                                        <div class="price">3.020.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-acoustic-yamaha-jr2.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Yamaha-JR2.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Yamaha JR2"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1037&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar-cho-tre-em/dan-guitar-acoustic-yamaha-jr2.html">Đàn Guitar Acoustic Yamaha JR2</a>
+                                        </p>
+                                        <div class="price">3.590.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-mini-yamaha-cgs103aiii.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Classic-Mini-Yamaha-CGS103AIII.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Classic Mini Yamaha CGS103AIII"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1475&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-mini-yamaha-cgs103aiii.html">Đàn Guitar Classic Mini Yamaha CGS103AIII</a>
+                                        </p>
+                                        <div class="price">2.990.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-valote-vc-302fb.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Classic-VALOTE-VC-302FB.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Classic VALOTE VC-302FB"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1535&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-classic-valote-vc-302fb.html">Đàn Guitar Classic VALOTE VC-302FB</a>
+                                        </p>
+                                        <div class="price">Vui lòng liên hệ</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <a href="https://nhaccutiendat.vn/dan-gutiar-cho-tre-em/" title="Đàn Guitar cho trẻ em" class="view-more-bottom">
+                            <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>Xem thêm Đàn Guitar cho trẻ em</a>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-viet-nam/">Đàn Guitar Việt Nam</a>
+                            </h1>
+                            <a href="https://nhaccutiendat.vn/dan-guitar-viet-nam/" title="Đàn Guitar Việt Nam" class="view-more">
+                                <i aria-hidden="true" class="fa fa-external-link"></i>Xem thêm</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-pho-thong/">Đàn Guitar phổ thông</a>
+                            </h1>
+                            <a href="https://nhaccutiendat.vn/dan-guitar-pho-thong/" title="Đàn Guitar phổ thông" class="view-more">
+                                <i aria-hidden="true" class="fa fa-external-link"></i>Xem thêm</a>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="category-inner">
+                            <div class="home-category-col2 category-col-full">
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acousitc-kriens-kom860.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acousitc-Kriens-KOM860.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acousitc Kriens KOM860"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;907&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acousitc-kriens-kom860.html">Đàn Guitar Acousitc Kriens KOM860</a>
+                                        </p>
+                                        <div class="price">2.700.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/classical-guitar/dan-guitar-classic-kriens-c10.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Classic-Kriens-C10.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Classic Kriens C10"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1339&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/classical-guitar/dan-guitar-classic-kriens-c10.html">Đàn guitar Classic Kriens C10</a>
+                                        </p>
+                                        <div class="price">1.710.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/classical-guitar/dan-guitar-adonis-agw203.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Adonis-AGW203.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Adonis AGW203"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1341&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/classical-guitar/dan-guitar-adonis-agw203.html">Đàn Guitar Adonis AGW203</a>
+                                        </p>
+                                        <div class="price">1.900.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-fb-d6c.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-FB-D6C.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar FB D6C"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1345&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-fb-d6c.html">Đàn Guitar FB D6C</a>
+                                        </p>
+                                        <div class="price">4.500.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-md788.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-MD788.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar MD788"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1348&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-md788.html">Đàn Guitar MD788</a>
+                                        </p>
+                                        <div class="price">3.000.000 VNĐ</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <a href="https://nhaccutiendat.vn/dan-guitar-pho-thong/" title="Đàn Guitar phổ thông" class="view-more-bottom">
+                            <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>Xem thêm Đàn Guitar phổ thông</a>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-yamaha/">Đàn Guitar Yamaha</a>
+                            </h1>
+                            <a href="https://nhaccutiendat.vn/dan-guitar-yamaha/" title="Đàn Guitar Yamaha" class="view-more">
+                                <i aria-hidden="true" class="fa fa-external-link"></i>Xem thêm</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>
+                                <a href="https://nhaccutiendat.vn/dan-guitar-valote/">Đàn Guitar VALOTE</a>
+                            </h1>
+                            <a href="https://nhaccutiendat.vn/dan-guitar-valote/" title="Đàn Guitar VALOTE" class="view-more">
+                                <i aria-hidden="true" class="fa fa-external-link"></i>Xem thêm</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>
+                                <a href="https://nhaccutiendat.vn/dan-gutiar-takamine/">Đàn Gutiar TAKAMINE</a>
+                            </h1>
+                            <a href="https://nhaccutiendat.vn/dan-gutiar-takamine/" title="Đàn Gutiar TAKAMINE" class="view-more">
+                                <i aria-hidden="true" class="fa fa-external-link"></i>Xem thêm</a>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="category-inner">
+                            <div class="home-category-col2 category-col-full">
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <span class="discount">-5%</span>
+                                        <span class="discount">-5%</span>
+                                        <a href="https://nhaccutiendat.vn/classic-guitar/dan-guitar-classic-takamine-gc3-nat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-classic-Takamine-GC3-Nat.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar classic Takamine GC3-Nat"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1268&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/classic-guitar/dan-guitar-classic-takamine-gc3-nat.html">Đàn guitar classic Takamine GC3-Nat</a>
+                                        </p>
+                                        <div class="price">4.750.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d1d-ns.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-D1D-NS.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine D1D NS"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1269&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d1d-ns.html">Đàn guitar Acoustic Takamine D1D NS</a>
+                                        </p>
+                                        <div class="price">3.900.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <span class="discount">-5%</span>
+                                        <span class="discount">-5%</span>
+                                        <a href="https://nhaccutiendat.vn/classic-guitar/dan-guitar-classic-takamine-gc5-nat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-classic-Takamine-GC5-Nat.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar classic Takamine GC5-Nat"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1270&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/classic-guitar/dan-guitar-classic-takamine-gc5-nat.html">Đàn guitar classic Takamine GC5-Nat</a>
+                                        </p>
+                                        <div class="price">6.090.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <span class="discount">-5%</span>
+                                        <span class="discount">-5%</span>
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d2d.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-D2D.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine D2D"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1271&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d2d.html">Đàn guitar Acoustic Takamine D2D</a>
+                                        </p>
+                                        <div class="price">4.240.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-gd51-nat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-GD51-NAT.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine GD51 NAT"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1272&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-gd51-nat.html">Đàn guitar Acoustic Takamine GD51 NAT</a>
+                                        </p>
+                                        <div class="price">6.530.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-gd751-cenat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-GD751-CENAT.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine GD751 CENAT"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1273&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-gd751-cenat.html">Đàn guitar Acoustic Takamine GD751 CENAT</a>
+                                        </p>
+                                        <div class="price">10.090.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed2dcnat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-ED2DCNAT.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine ED2DCNAT"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1274&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed2dcnat.html">Đàn guitar Acoustic Takamine ED2DCNAT</a>
+                                        </p>
+                                        <div class="price">6.180.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed1nc.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-ED1NC.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine ED1NC"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1275&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed1nc.html">Đàn guitar Acoustic Takamine ED1NC</a>
+                                        </p>
+                                        <div class="price">5.940.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed1dc.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-ED1DC.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine ED1DC"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1276&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed1dc.html">Đàn guitar Acoustic Takamine ED1DC</a>
+                                        </p>
+                                        <div class="price">5.940.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-gd93nat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-GD93NAT.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine GD93NAT"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1278&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-gd93nat.html">Đàn guitar Acoustic Takamine GD93NAT</a>
+                                        </p>
+                                        <div class="price">8.650.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d2d-nat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-D2D-NAT.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine D2D NAT"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1280&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d2d-nat.html">Đàn guitar Acoustic Takamine D2D NAT</a>
+                                        </p>
+                                        <div class="price">4.230.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed2nc-nat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-ED2NC-NAT.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine ED2NC NAT"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1281&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-ed2nc-nat.html">Đàn guitar Acoustic Takamine ED2NC NAT</a>
+                                        </p>
+                                        <div class="price">6.180.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d1n-ns.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-guitar-Acoustic-Takamine-D1N-NS.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn guitar Acoustic Takamine D1N NS"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1282&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/acoustic-guitar/dan-guitar-acoustic-takamine-d1n-ns.html">Đàn guitar Acoustic Takamine D1N NS</a>
+                                        </p>
+                                        <div class="price">3.900.000 VNĐ</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <a href="https://nhaccutiendat.vn/dan-gutiar-takamine/" title="Đàn Gutiar TAKAMINE" class="view-more-bottom">
+                            <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>Xem thêm Đàn Gutiar TAKAMINE</a>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="category">
+                        <div class="title">
+                            <h1>
+                                <a href="https://nhaccutiendat.vn/dan-gutiar-fender/">Đàn Gutiar FENDER</a>
+                            </h1>
+                            <a href="https://nhaccutiendat.vn/dan-gutiar-fender/" title="Đàn Gutiar FENDER" class="view-more">
+                                <i aria-hidden="true" class="fa fa-external-link"></i>Xem thêm</a>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="category-inner">
+                            <div class="home-category-col2 category-col-full">
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cd-60sce-nat.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Gutiar-Acoustic-FENDER-CD-60SCE-NAT.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic FENDER CD-60SCE NAT"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1310&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cd-60sce-nat.html">Đàn Guitar Acoustic FENDER CD-60SCE NAT</a>
+                                        </p>
+                                        <div class="price">6.700.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-t-bucket-300-ce-flm-mpl.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-T-bucket-300-CE-FLM-MPL.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender T-bucket 300-CE FLM MPL"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1495&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-t-bucket-300-ce-flm-mpl.html">Đàn Guitar Acoustic Fender T-bucket 300-CE FLM MPL</a>
+                                        </p>
+                                        <div class="price">6.800.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cc-60s-lh.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-CC-60S-LH.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender CC-60S LH"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1496&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cc-60s-lh.html">Đàn Guitar Acoustic Fender CC-60S LH</a>
+                                        </p>
+                                        <div class="price">5.090.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cc-60s.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-CC-60S.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender CC-60S"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1497&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cc-60s.html">Đàn Guitar Acoustic Fender CC-60S</a>
+                                        </p>
+                                        <div class="price">5.090.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cc-60sce.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-CC-60SCE.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender CC-60SCE"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1498&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cc-60sce.html">Đàn Guitar Acoustic Fender CC-60SCE</a>
+                                        </p>
+                                        <div class="price">7.050.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cd-60sce.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-CD-60SCE.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender CD-60SCE"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1499&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-cd-60sce.html">Đàn Guitar Acoustic Fender CD-60SCE</a>
+                                        </p>
+                                        <div class="price">7.050.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-dreadnought-cd-60s.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-dreadnought-CD-60S.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender dreadnought CD-60S"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1500&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-dreadnought-cd-60s.html">Đàn Guitar Acoustic Fender dreadnought CD-60S</a>
+                                        </p>
+                                        <div class="price">5.090.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-fa-125ce.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-FA-125CE.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender FA-125CE"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1501&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-fa-125ce.html">Đàn Guitar Acoustic Fender FA-125CE</a>
+                                        </p>
+                                        <div class="price">5.060.000 VNĐ</div>
+                                    </div>
+                                </div>
+                                <div class="column col-xs-6 col-sm-3">
+                                    <div class="item">
+                                        <span class="discount">-12%</span>
+                                        <span class="discount">-12%</span>
+                                        <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-fa-100.html">
+                                            <img src="https://nhaccutiendat.vn/upload/pro/Dan-Guitar-Acoustic-Fender-FA-100.jpg?width=300&amp;height=300&amp;quality=100" alt="Đàn Guitar Acoustic Fender FA-100"/>
+                                        </a>
+                                        <a onclick="AddItemCompare(&apos;1502&apos;)" href="javascript:void(0);" class="compare">
+                                            <i aria-hidden="true" class="fa fa-calculator"></i>So sánh</a>
+                                        <p class="product-name">
+                                            <a href="https://nhaccutiendat.vn/dan-guitar/dan-guitar-acoustic-fender-fa-100.html">Đàn Guitar Acoustic Fender FA-100</a>
+                                        </p>
+                                        <div class="price">2.587.000 VNĐ</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <a href="https://nhaccutiendat.vn/dan-gutiar-fender/" title="Đàn Gutiar FENDER" class="view-more-bottom">
+                            <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>Xem thêm Đàn Gutiar FENDER</a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="support-bottom">
+        <table>
+            <tr>
+                <td>Phía Bắc:</td>
+                <td>
+                    <img src="https://nhaccutiendat.vn/templates/v1//images/skype-online.png" alt="Ms. Mơ"/>
+                    <a href="tel:090.321.6609">090.321.6609</a>
+                    <i>(Ms. Mơ)</i>
+                </td>
+                <td>
+                    <img src="https://nhaccutiendat.vn/templates/v1//images/skype-online.png" alt="Mr. Đức Anh"/>
+                    <a href="tel:098 1174788‬">098 1174788‬</a>
+                    <i>(Mr. Đức Anh)</i>
+                </td>
+                <td>
+                    <img src="https://nhaccutiendat.vn/templates/v1//images/skype-online.png" alt="Ms. Tuyết - Bán Sỉ"/>
+                    <a href="tel: 0904.82.1381">0904.82.1381</a>
+                    <i>(Ms. Tuyết - Bán Sỉ)</i>
+                </td>
+            </tr>
+            <tr>
+                <td>Phía Nam:</td>
+                <td>
+                    <img src="https://nhaccutiendat.vn/templates/v1//images/skype-online.png" alt="Mr. Quân"/>
+                    <a href="tel:0909 015 886">0909 015 886</a>
+                    <i>(Mr. Quân)</i>
+                </td>
+                <td>
+                    <img src="https://nhaccutiendat.vn/templates/v1//images/skype-online.png" alt="Mr. Thắng"/>
+                    <a href="tel:0938.77.0002">0938.77.0002</a>
+                    <i>(Mr. Thắng)</i>
+                </td>
+                <td>
+                    <img src="https://nhaccutiendat.vn/templates/v1//images/skype-online.png" alt="Ms. Oanh - Bán Sỉ"/>
+                    <a href="tel:0904.83.1381">0904.83.1381</a>
+                    <i>(Ms. Oanh - Bán Sỉ)</i>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="position: fixed; display: block; transform: scale(1, 1); transform-origin: left top 0px;" id="vietnetmedia-alo-phoneIcon" class="vietnetmedia-alo-phone vietnetmedia-alo-green vietnetmedia-alo-show">
+        <div class="vietnetmedia-alo-ph-circle-time">
+            <img src="#" id="vietnetmedia-alo-external-site-favicon"/>
+            <span id="vietnetmedia-alo-external-site-counter"></span>
+        </div>
+        <canvas id="stopwatch"></canvas>
+        <div class="vietnetmedia-alo-ph-circle"></div>
+        <div class="vietnetmedia-alo-ph-circle-fill"></div>
+        <div data-popup-open="popup-1" onclick="ga(&apos;send&apos;, &apos;event&apos;, &apos;Call&apos;, &apos;Click&apos;, &apos;Nút gọi nháy ở góc&apos;);" class="vietnetmedia-alo-ph-img-circle vietnetmedia-alo-ph-circle-shake"></div>
+        <div class="vietnetmedia-alo-ph-circle-close"></div>
+    </div>
+    <div data-popup="popup-1" class="popup">
+        <div class="popup-inner">
+            <h2>Hỗ trợ trực tuyến</h2>
+            <div id="call">
+                <div class="support-ajax">
+                    <div style="width: 100%;">
+                        <div class="widget">
+                            <table cellpadding="3" cellspacing="2" style="border: 1px solid #dbdbdb; width:100%" class="sTable">
+                                <tbody>
+                                    <tr>
+                                        <td width="30%">Phía Bắc</td>
+                                        <td>
+                                            <div style="text-align: center; margin-bottom:5px">
+                                                <a href="tel:090.321.6609" class="callclick"></a>
+                                                <span style="color: #FF0000">Ms. Mơ</span>:<a href="tel:090.321.6609">090.321.6609</a>
+                                            </div>
+                                            <div style="text-align: center; margin-bottom:5px">
+                                                <a href="tel:098 1174788‬" class="callclick"></a>
+                                                <span style="color: #FF0000">Mr. Đức Anh</span>:<a href="tel:098 1174788‬">098 1174788‬</a>
+                                            </div>
+                                            <div style="text-align: center; margin-bottom:5px">
+                                                <a href="tel: 0904.82.1381" class="callclick"></a>
+                                                <span style="color: #FF0000">Ms. Tuyết - Bán Sỉ</span>:<a href="tel: 0904.82.1381">0904.82.1381</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="30%">Phía Nam</td>
+                                        <td>
+                                            <div style="text-align: center; margin-bottom:5px">
+                                                <a href="tel:0909 015 886" class="callclick"></a>
+                                                <span style="color: #FF0000">Mr. Quân</span>:<a href="tel:0909 015 886">0909 015 886</a>
+                                            </div>
+                                            <div style="text-align: center; margin-bottom:5px">
+                                                <a href="tel:0938.77.0002" class="callclick"></a>
+                                                <span style="color: #FF0000">Mr. Thắng</span>:<a href="tel:0938.77.0002">0938.77.0002</a>
+                                            </div>
+                                            <div style="text-align: center; margin-bottom:5px">
+                                                <a href="tel:0904.83.1381" class="callclick"></a>
+                                                <span style="color: #FF0000">Ms. Oanh - Bán Sỉ</span>:<a href="tel:0904.83.1381">0904.83.1381</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a data-popup-close="popup-1" href="#" class="popup-close">x</a>
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            <div id="box-foot">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-12">
+                            <div class="box-bdl-out">
+                                <h5 class="uppercase">CHÍNH SÁCH</h5>
+                                <ul class="list-news">
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/chinh-sach-va-quy-dinh-chung.html" title="Chính sách và quy định chung">Chính sách và quy định chung</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/chinh-sach-ban-hang-va-chat-luong-hang-hoa.html" title="Chính sách bán hàng và chất lượng h.hóa">Chính sách bán hàng và chất lượng h.hóa</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/chinh-sach-bao-mat-thong-tin.html" title="Chính sách bảo mật thông tin">Chính sách bảo mật thông tin</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/chinh-sach-doi-tra-hang-hoa.html" title="Chính sách Đổi - Trả hàng hóa">Chính sách Đổi - Trả hàng hóa</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/chinh-sach-van-chuyen-giao-nhan-hang-hoa.html" title="Chính sách vận chuyển, giao nhận h.hóa">Chính sách vận chuyển, giao nhận h.hóa</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/chinh-sach-bao-hanh-san-pham.html" title="Chính sách Bảo hành sản phẩm">Chính sách Bảo hành sản phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/chinh-sach-ho-tro-tra-gop.html" title="Chính sách Hỗ trợ trả góp">Chính sách Hỗ trợ trả góp</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <div class="box-bdl-out">
+                                <h5 class="uppercase">TRỢ GIÚP NHANH</h5>
+                                <ul class="list-news">
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/khieu-nai-boi-thuong.html" title="Khiếu nại &amp; bồi thường ">Khiếu nại &amp; bồi thường</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán">Hướng dẫn thanh toán</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/huong-dan-mua-hang.html" title="Hướng dẫn mua hàng">Hướng dẫn mua hàng</a>
+                                    </li>
+                                    <li>
+                                        <a href="/" title="Câu hỏi thường gặp">Câu hỏi thường gặp</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhaccutiendat.vn/lien-he-voi-chung-toi.html" title="Liên hệ với chúng tôi">Liên hệ với chúng tôi</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <a href="/Maps.html">
+                                <img src="https://nhaccutiendat.vn/templates/v1/images/MAP.jpg" alt="Bản đồ" class="map"/>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                            <a id="FooterControl_hplFaceBook" href="" title="facebook" class="facebook" target="_blank">
+                                <img src="https://nhaccutiendat.vn/templates/v1/images/facebook.png" alt="Facebook Nhạc cụ Tiến Đạt"/>
+                            </a>
+                            <a id="FooterControl_hplFaceBook" href="" title="googleplus" class="googleplus" target="_blank">
+                                <img src="https://nhaccutiendat.vn/templates/v1/images/googleplus.png" alt="GooglePlus Nhạc cụ Tiến Đạt"/>
+                            </a>
+                            <a id="FooterControl_hplFaceBook" href="" title="youtube" class="youtube" target="_blank">
+                                <img src="https://nhaccutiendat.vn/templates/v1/images/youtube.png" alt="Youtube Nhạc cụ Tiến Đạt"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-address">
+            <div class="container">
+                <div style="margin-left: 0; padding-left: 0" class="col-md-2 col-sm-12 hidden-xs">
+                    <img src="/upload/files/logo-tiendat.png" alt="Nhạc cụ Tiến Đạt" style="margin: 10px 10px 0 0"/>
+                </div>
+                <div style="margin-left: 0; padding-left: 0" class="col-md-10 col-sm-12">
+                    <h4 style="text-transform: uppercase; margin-bottom: 0px">TRUNG TÂM NHẠC CỤ TIẾN ĐẠT</h4>
+                    <b>Website:</b>
+                    <a href="https://nhaccutiendat.vn">nhaccutiendat.vn</a>-<b>Email:</b>
+                    <a href="info@nhaccutiendat.vn">info@nhaccutiendat.vn</a>
+                    <br/>GPKD số<b>0101516915</b>do sở kế hoạch đầu tư thành phố Hà Nội cấp ngày 30/07/2004<p>
+                        <a href="/Maps.aspx" class="map-footer" target="_blank"></a>
+                    </p>
+                </div>
+                <div style="height: 20px;" class="clear"></div>
+                <div style="margin-left: 0; padding-left: 0" class="col-sm-6 col-xs-12">
+                    <p>
+                        <b style="text-transform: uppercase">Tại Hà Nội:</b>
+                        <a href="/Maps.html" class="oto">Có chỗ để ô tô</a>
+                    </p>
+                    <p>
+                        <b>Showroom:</b>Số 71 Đường bờ sông Quan Hoa - Phường Quan Hoa - Cầu Giấy - Hà Nội.<br/>
+                        <b>Điện thoại:</b>
+                        <a href="tel:02466639953" class="callbac">024.666.39953</a>-<a href="tel:0904821381" class="callbac">0904.82.1381</a>-<a href="tel:0903216609" class="callbac">090.321.6609</a>-<a href="tel:0981174788" class="callbac">098.117.4788</a>
+                    </p>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="box-bdl">
+                        <p>
+                            <b style="text-transform: uppercase">Tại TP Hồ Chí Minh:</b>
+                            <a href="/Maps.html" class="oto">Có chỗ để ô tô</a>
+                        </p>
+                        <p>
+                            <b>Showroom:</b>91 Điện Biên Phủ - P.15, Q.Bình Thạnh - TPHCM<br/>
+                            <em>
+                                <b>(Từ hàng xanh đi về hướng cầu Điện Biên Phủ 700m)</b>
+                            </em>
+                            <br/>
+                            <b>Điện thoại:</b>
+                            <a href="tel:02835144875" class="callnam">028.35144875</a>-0909 015 886 /<b>Fax:</b>02835118092</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copy">
+            <div style="position: relative" class="container">
+                <p>
+                    <a rel="nofollow" href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=15758" target="_blank">
+                        <img src="https://nhaccutiendat.vn/templates/v1/images/registed.png" alt="Đã đăng ký với bộ công thương" class="registed"/>
+                    </a>© Copyright by Nhạc cụ Tiến Đạt. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div class="cd-user-modal">
+        <form class="cd-form"></form>
+        <div class="cd-user-modal-container">
+            <ul class="cd-switcher">
+                <li>
+                    <a href="#0">Đăng nhập</a>
+                </li>
+                <li>
+                    <a href="#0">Đăng ký nhanh</a>
+                </li>
+                <li>
+                    <a href="#0">Social</a>
+                </li>
+            </ul>
+            <div id="cd-login">
+                <form id="frm_login" class="cd-form">
+                    <p class="login">
+                        <span class="error"></span>
+                    </p>
+                    <p class="fieldset">
+                        <label for="signin-email" class="image-replace cd-email">E-mail</label>
+                        <input name="signin-email" id="signin-email" placeholder="E-mail" type="email" class="full-width has-padding has-border"/>
+                        <span class="cd-error-message">Vui lòng nhập email!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label for="signin-password" class="image-replace cd-password">Mật khẩu</label>
+                        <input name="signin-password" id="signin-password" placeholder="Mật khẩu" type="password" class="full-width has-padding has-border"/>
+                        <span class="cd-error-message">Vui lòng nhập mật khẩu!</span>
+                    </p>
+                    <p class="fieldset">
+                        <input name="remember" checked="true" id="remember" type="checkbox"/>
+                        <label for="remember-me">Lưu email và mật khẩu</label>
+                    </p>
+                    <p class="fieldset">
+                        <input type="submit" class="full-width" value="Login"/>
+                    </p>
+                </form>
+                <p class="cd-form-bottom-message">
+                    <a href="https://nhaccutiendat.vnquen-mat-khau.html">Quên mật khẩu?</a>
+                </p>
+                <a href="#0" class="cd-close-form">Close</a>
+            </div>
+            <div id="cd-signup">
+                <form enctype="multipart/form-data" method="post" name="frm_regsiter" id="frm_regsiter" class="cd-form">
+                    <p class="signup">
+                        <span class="error"></span>
+                    </p>
+                    <p class="fieldset">
+                        <label for="signup-email" class="image-replace cd-email">E-mail</label>
+                        <input name="signup-email" id="signup-email" placeholder="E-mail" type="email" class="full-width has-padding has-border"/>
+                        <span class="cd-error-message">Vui lòng nhập email!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label for="signup-fullname" class="image-replace cd-username">Họ tên</label>
+                        <input name="signup-fullname" id="signup-fullname" placeholder="Họ tên" type="text" class="full-width has-padding has-border"/>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label for="signup-password" class="image-replace cd-password">Mật khẩu</label>
+                        <input name="signup-password" id="signup-password" placeholder="Mật khẩu" type="password" class="full-width has-padding has-border"/>
+                        <span class="cd-error-message">Vui lòng nhập mật khẩu!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label for="signup-phone" class="image-replace cd-phone">Họ tên</label>
+                        <input maxlength="20" name="signup-phone" id="signup-phone" placeholder="Số điện thoại" type="text" class="full-width has-padding has-border"/>
+                        <span class="cd-error-message">Vui lòng nhập số điện thoại!</span>
+                    </p>
+                    <p class="fieldset">
+                        <input id="accept-terms" type="checkbox"/>
+                        <label for="accept-terms">Tôi đồng ý với các<a href="#0">điều khoản</a></label>
+                    </p>
+                    <p class="fieldset">
+                        <input type="submit" class="full-width has-padding" value="Create account"/>
+                    </p>
+                </form>
+            </div>
+            <div id="cd-reset-password">
+                <p class="cd-form-message">Nếu bạn quên mật khẩu, hãy điền email vào ô dưới đây và làm theo hướng dẫn.</p>
+                <form enctype="multipart/form-data" method="post" name="frm_resetpass" id="frm_resetpass" class="cd-form">
+                    <p class="resetpass">
+                        <span class="error"></span>
+                    </p>
+                    <p class="fieldset">
+                        <label for="reset-email" class="image-replace cd-email">E-mail</label>
+                        <input name="reset-email" id="reset-email" placeholder="E-mail" type="email" class="full-width has-padding has-border"/>
+                        <span class="cd-error-message">Vui lòng nhập email!</span>
+                    </p>
+                    <p class="fieldset">
+                        <input type="submit" class="full-width has-padding" value="Reset password"/>
+                    </p>
+                </form>
+                <p class="cd-form-bottom-message">
+                    <a href="#0">Quay lại form đăng nhập</a>
+                </p>
+            </div>
+            <div id="cd-social">
+                <form class="cd-form">
+                    <div class="registration">
+                        <div data-equalizer-watch="" class="social-login">
+                            <h5 class="text-center">Mạng xã hội</h5>
+                            <div class="social-login-btn facebook">
+                                <a onclick="FBLogin();" href="javascript:void(0)">
+                                    <i class="fa fa-facebook"></i>Đăng nhập bằng facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="cd-info" class="info">
+                <form enctype="multipart/form-data" method="post" name="frm_info" id="frm_info" class="cd-form">
+                    <div class="page-heading text-center email">
+                        <div class="icon-letter">
+                            <img src="https://nhaccutiendat.vn/templates/v1/login-popup/img/cd-icon-email.svg" alt=""/>
+                        </div>
+                        <h3>EMAIL XÁC NHẬN</h3>
+                        <p>Đã được gửi đến hộp thư của quý khách</p>
+                        <p>Nếu không tìm thấy mail trong hộp thư đến (inbox), vui lòng kiểm tra trong hộp thư rác (Junk )</p>
+                    </div>
+                    <div class="text-center info">
+                        <div class="icon-letter">
+                            <img src="https://nhaccutiendat.vn/templates/v1/login-popup/img/cd-icon-username.svg" alt=""/>
+                        </div>
+                        <h3>ĐĂNG KÝ THÀNH CÔNG</h3>
+                        <p>Cám ơn bạn đã sử dụng dịch vụ của chúng tôi</p>
+                        <p>Bạn có thể<a onclick="login_selected()" id="login_popup">click vào đây</a>để đăng nhập</p>
+                    </div>
+                    <div class="text-center resetpass">
+                        <div class="icon-letter">
+                            <img src="https://nhaccutiendat.vn/templates/v1/login-popup/img/cd-icon-email.svg" alt=""/>
+                        </div>
+                        <h3>EMAIL KHÔI PHỤC MẬT KHẨU</h3>
+                        <p>Đã được gửi đến hộp thư của quý khách</p>
+                        <p>Nếu không tìm thấy mail trong hộp thư đến (inbox), vui lòng kiểm tra trong hộp thư rác (Junk )</p>
+                    </div>
+                </form>
+            </div>
+            <a href="#0" class="cd-close-form">Close</a>
+        </div>
+    </div>
+    <form method="POST" action="https://nhaccutiendat.vn/Authenticate/LoginFacebook.aspx" id="sign-in-fb">
+        <input name="signedRequest" id="signedRequest" type="hidden"/>
+        <input name="accessToken" id="accessToken" type="hidden"/>
+        <input name="request_" id="request_" type="hidden"/>
+        <input name="url_" id="url_" type="hidden" value="aHR0cHM6Ly9uaGFjY3V0aWVuZGF0LnZu"/>
+        <input name="tk" id="tk" type="hidden" value="MjAxOS0wMi0yOA=="/>
+    </form>
+    <div class="widget-compare-bg">
+        <div class="widget-compare">
+            <a onclick="closeCompare();" href="javascript:void(0);" class="close">
+                <i aria-hidden="true" class="fa fa-times"></i>
+            </a>
+            <div id="compare-ajax"></div>
+        </div>
+    </div>
+    <div style="display: none" id="cart_popup" class="popup-cart">
+        <span class="b-close"></span>
+        <div id="content-ajax"></div>
+    </div>
+    <div id="div-ajax-loading">
+        <img src="https://nhaccutiendat.vn/templates/v1/images/ajax-loading-bar.gif" alt="Waiting..."/>
+    </div>
+    <div class="region-popup">
+        <div id="boxes">
+            <div style="top: 199.5px; left: 551.5px; display: none;" id="dialog" class="window">
+                <p class="pickregion">
+                    <span>
+                        <img src="https://nhaccutiendat.vn/templates/v1//images/iconmap.png" width="24" height="24"/>
+                    </span>Chọn vị trí</p>
+                <div id="lorem">
+                    <p>Vui lòng chọn vị trí gần quý khách nhất</p>
+                </div>
+                <div id="select-region">
+                    <form enctype="multipart/form-data" method="post" data-abide="true" novalidate="true" id="frm_region">
+                        <ul class="pickLocation">
+                            <li>
+                                <input name="doneRegion" id="doneRegion" type="hidden" value=""/>
+                                <input onclick="$(&apos;#doneRegion&apos;).val(&apos;bac&apos;); $(&apos;#frm_region&apos;).submit();" type="button" class="btnRegion" value="Phía Bắc"/>
+                                <li>
+                                    <input onclick="$(&apos;#doneRegion&apos;).val(&apos;nam&apos;); $(&apos;#frm_region&apos;).submit();" type="button" class="btnRegion" value="Phía Nam"/>
+                                </li>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+            <div style="width: 1478px; font-size: 32pt; color: white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
+        </div>
+    </div>
+</body>
