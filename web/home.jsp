@@ -10,9 +10,30 @@
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/grid.css"/>
         <link rel="stylesheet" type="text/css" href="css/flexMasonry.css"/>
+        <link rel="stylesheet" type="text/css" href="css/popup.css"/>
         <link rel="stylesheet" type="text/css" href="css/home.css"/>        
     </head>
-    <body>
+    <body>                
+        <script type="text/javascript">
+            function closePopup() {
+                let popup = document.getElementById('popup');
+                console.log(popup);
+                popup.style.visibility = 'hidden';
+                popup.style.opacity = 0;
+            }
+        </script>
+        <div class="popup" id="popup">
+            <div class="popup-inner">
+                <div class="popup__photo">
+                    <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&amp;s=9980646201037d28700d826b1bd096c4&amp;auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="">
+                </div>
+                <div class="popup__text">
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex velit, viverra non vulputate vitae, blandit vitae nisl. Nullam fermentum orci et erat viverra bibendum. Aliquam sed varius nibh, vitae mattis purus. Mauris elementum sapien non ullamcorper vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eget felis sit amet eros viverra pulvinar.</p>
+                </div>
+                <button class="popup__close" onclick="closePopup()">X</button>
+            </div>
+        </div>
         <header id="question">
             <div class="header-image">
                 <div class="logo-inner">
@@ -104,7 +125,7 @@
                         <!-- GUITAR LIST RESULT -->
                     </div>
                     <div class="paging" id="guitar-paging">
-                        
+
                     </div>
                 </div>
             </div>

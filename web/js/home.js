@@ -1,4 +1,11 @@
-(function () {
+(function () {       
+    function openPopup(){
+        window.location.href='#popup';
+        let popup = document.getElementById('popup');        
+        popup.style.visibility = 'visible';
+        popup.style.opacity = 1;
+    }
+
     var Model = {
         guitars: [],
         currentPage: 0,
@@ -39,6 +46,13 @@
             PagingView.init();
             ResultView.init();
         },
+        newAttribute(name,content){
+            let newAttr = {
+                name: name, 
+                content: content
+            }
+            return newAttr;
+        },
         newGuitar(id, name, category, price, imageUrl, weightedScore, attributes) {
             let newGuitar = {
                 id: id,
@@ -46,7 +60,8 @@
                 category: category,
                 imageUrl: imageUrl,
                 price: price,
-                weightedScore: weightedScore
+                weightedScore: weightedScore,
+                attributes: attributes
             }
             return newGuitar;
         },
@@ -70,6 +85,7 @@
         parseGuitarFromDOM: function (dom) {
             let guitarDoms = dom.getElementsByTagName("guitar");
             let guitars = [];
+            
             for (let i = 0; i < guitarDoms.length; i++) {
                 let id = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'id');
                 let guitarName = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'name');
@@ -77,7 +93,16 @@
                 let price = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'price');
                 let imageUrl = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'imageUrl');
                 let weightedScore = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'weightedScore');
-                let guitar = this.newGuitar(id, guitarName, category, price, imageUrl, weightedScore, null);
+                let attrDoms = guitarDoms[i].getElementsByTagNameNS('*','attribute');
+                let attrs = [];
+                for (let j = 0; j < attrDoms.length; j++) {                    
+                    let attrName = MyUtils.getValueOfNodeDomByTagName(attrDoms[j], 'name');
+                    let content = MyUtils.getValueOfNodeDomByTagName(attrDoms[j], 'content');
+                    let attr = this.newAttribute(attrName, content);
+                    attrs.push(attr);
+                }
+
+                let guitar = this.newGuitar(id, guitarName, category, price, imageUrl, weightedScore, attrs);
                 guitars.push(guitar);
             }
 
@@ -175,7 +200,7 @@
                 let item = HomeOctopus.createGuitarItem(guitar);
                 item.addEventListener('click', (function (copy) {
                     return function () {
-                        alert("CLICK");
+                        openPopup();
                         console.log(guitar);
                     }
                 })(guitar));
