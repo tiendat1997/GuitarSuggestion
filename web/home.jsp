@@ -11,35 +11,37 @@
         <link rel="stylesheet" type="text/css" href="css/grid.css"/>
         <link rel="stylesheet" type="text/css" href="css/flexMasonry.css"/>
         <link rel="stylesheet" type="text/css" href="css/popup.css"/>
+        <link rel="stylesheet" type="text/css" href="css/icon.css"/>
         <link rel="stylesheet" type="text/css" href="css/home.css"/>        
-    </head>
+    </head>    
     <body>                
+        <div id="loader" class="loader"><div></div></div>
         <div class="popup" id="popup">
             <div class="popup-inner">
                 <div class="popup__photo">
-                    <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&amp;s=9980646201037d28700d826b1bd096c4&amp;auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="popup__text">
                     <h1 class="popup-title"></h1>
                     <h1 class="popup-price"></h1>
                     <table class="popup-attribute">
-                        
+
                     </table>                    
                 </div>
                 <a class="popup__close" id="popup-close">X</a>
             </div>
         </div>
-        <div id="navbar" class="navbar">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a href="#">Trang chủ</a>                    
-                </li>
-                <li class="nav-item">
-                    <a href="#">Top giá</a>                    
-                </li>
-            </ul>
-        </div>            
         <header id="question">
+            <div id="navbar" class="container navbar">
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a href="/GuitarSuggestion">Trang chủ</a>                    
+                    </li>
+                    <li class="nav-item">
+                        <a href="/GuitarSuggestion/DispatchServlet?btAction=topguitar">Top guitar</a>                    
+                    </li>
+                </ul>
+            </div>                    
             <div class="header-image">
                 <div class="logo-inner">
                     <div id="logo">
@@ -47,6 +49,7 @@
                     </div>
                 </div>
             </div>
+            <hr class="line-break"/>
         </header>                
         <section id="main">
             <div class="container">
@@ -115,16 +118,19 @@
                             <button type="submit" class="outline-button" >Tìm guitar</button>
                         </form>
                         <div class="movement">
-                            <a href="#result">Kết quả</a>
+                            <a href="#result" class="scrolldown">
+                                <span></span>
+                                <span></span>
+                                <span></span>                                                            
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>           
             <div class="container" id="result">                
-                <div class="row">
+                <div class="row result-title">
                     <h2 class="center-in">KẾT QUẢ</h2>
                 </div>
-                <hr/>               
                 <div class="row">                    
                     <div class="masonry" id="guitar-container">
                         <!-- GUITAR LIST RESULT -->
@@ -135,7 +141,11 @@
                 </div>
             </div>
             <div class="movement">
-                <a href="#question">Tìm kiếm</a>
+                <a href="#question" class="scrolltop">
+                    <span></span>
+                    <span></span>
+                    <span></span></br>                    
+                </a>
             </div>
         </div>
     </section>

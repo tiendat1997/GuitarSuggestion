@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tiendat.servlet;
 
 import java.io.IOException;
@@ -17,29 +12,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author DATTTSE62330
  */
-public class DispatchServlet extends HttpServlet {
-
-    private final String HOME_PAGE = "home.jsp";
-    private final String RECOMMEND_SERVLET = "RecommendServlet";
-    private final String TOP_GUITAR_SERVLET = "TopGuitarServlet";
+public class TopGuitarServlet extends HttpServlet {
+    private final String TOP_GUITAR_PAGE = "topGuitar.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-//        PrintWriter out = response.getWriter();
-        String url = HOME_PAGE;
-        try {            
-            String btAction = request.getParameter("btAction");
-            if (btAction == null) {
-                
-            } else if (btAction.equals("recommend")){
-                url = RECOMMEND_SERVLET;
-            } else if (btAction.equals("topguitar")){
-                url = TOP_GUITAR_SERVLET;
-            }
+        PrintWriter out = response.getWriter();
+        String url = TOP_GUITAR_PAGE;
+        try {
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
         } finally {
-//            out.close();
+            out.close();
         }
     }
 

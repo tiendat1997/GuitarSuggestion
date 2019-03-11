@@ -24,6 +24,10 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>tiendat.servlet.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TopGuitarServlet</servlet-name>
+        <servlet-class>tiendat.servlet.TopGuitarServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatchServlet</servlet-name>
         <url-pattern>/DispatchServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TopGuitarServlet</servlet-name>
+        <url-pattern>/TopGuitarServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

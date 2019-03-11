@@ -2,21 +2,41 @@ body * {
     font-family: 'Abel', sans-serif;
 }
 .navbar {
-    
+
 }
 .nav {
     width: 100%;
-    text-align: center;
+    text-align: center;        
+    /*    border-bottom: 1px solid #f06292;*/
 }
 .nav > .nav-item {
+    font-size: 1.2rem;        
     display: inline-block;
+    margin: 5px 5px;
+}
+.nav > .nav-item:hover {
+    text-decoration: underline;        
+    font-weight: bold;
+}
+
+.nav > li.active {
+    text-decoration: underline;    
+    font-weight: bold;
+}
+
+.nav > .nav-item > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f06292;    
 }
 
 
 #logo>img {
     display: block;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
+    /*    border-left: 2px solid #f06292;
+        border-right: 2px solid #f06292;*/
 }
 
 .copyright-text {
@@ -25,7 +45,7 @@ body * {
 
 .line {     
     margin-left: 15px; 
-    
+
     margin-right: 15px;
 }
 
@@ -46,7 +66,7 @@ body * {
 .questions p {        
     margin: 0 0 1px 0;
     color: #666;    
-    font-weight: bold;
+    font-weight: bold;    
 }
 
 .questions > li{
@@ -65,6 +85,18 @@ body * {
     padding-bottom: 30px;
 }
 
+.result-title {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #e91e63;
+    color: white;
+    font-size: 1.2rem;
+}
+
 .center-in{
     margin-left: auto;
     margin-right: auto;    
@@ -75,7 +107,9 @@ body * {
 }
 
 .outline-button {
-    border-color: #1172c4;
+    color: #f06292;
+    font-weight: bolder;
+    border-color: #f06292;
     border-style: solid;
     background: transparent;
     border-width: 2px;
@@ -83,5 +117,54 @@ body * {
     padding: 10px 40px;
     text-transform: uppercase;
 }
+.outline-button:hover{
+    background: #FF1493;   
+    color: white; 
+}
+
+.outline-button:focus{
+    border-radius: 22px;
+}
+
+.paging {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.paging a {    
+    margin: 2px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+.paging a:hover {
+    background: #FF1493;   
+    color: white; 
+}
+
+.paging a.active {
+    background: #FF1493;
+    color: white; 
+}
 
 
+.question-options > input[type='radio']:checked{
+
+}
+
+.question-options > input[type='radio'] {
+
+}
+
+
+hr.line-break {
+    width: 60px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    height: 3px;
+    background: #f06292;
+    border: none;
+}

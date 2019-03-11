@@ -75,7 +75,18 @@
         getGuitars: function () {
             return Model.guitars;
         },
+        showLoader(){
+            let loader = document.getElementById('loader');
+            let currClass = loader.getAttribute('class');
+            loader.setAttribute('class',currClass + ' loader-default is-active');
+        },
+        hideLoader(){
+            let loader = document.getElementById('loader');
+            loader.setAttribute('class','loader');
+        },
         recommendGuitars: function (form) {
+            // show loader 
+            this.showLoader();
             let url = 'DispatchServlet';
             let params = MyUtils.getFormParams(form, Model.objForm);
             var self = this;
@@ -87,6 +98,8 @@
                 PagingView.render();
                 ResultView.render();
                 window.location.href = "#result";
+                // hide loader
+                self.hideLoader();
             });
         },
         parseGuitarFromDOM: function (dom) {
@@ -230,12 +243,10 @@
 
             for (let i = 0; i < numOfPages; i++) {
                 let pageItem = document.createElement('a');
-                pageItem.setAttribute('href', '#' + i);
-                pageItem.style.margin = '5px';
-                pageItem.textContent = i + 1;
-                pageItem.style.fontWeight = 'normal';
+                pageItem.setAttribute('href', '#' + i);                
+                pageItem.textContent = i + 1;                
                 if (i == currentPage) {
-                    pageItem.style.fontWeight = 'bolder';
+                    pageItem.className += 'active';
                 }
 
                 pageItem.addEventListener('click', function (e) {
