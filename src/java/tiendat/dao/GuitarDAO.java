@@ -177,7 +177,7 @@ public class GuitarDAO {
                 if (nameLowercase.contains("taylor") || nameLowercase.contains("yamaha")
                         || nameLowercase.contains("yamaha") || nameLowercase.contains("fender")
                         || nameLowercase.contains("takamine") || nameLowercase.contains("martin")
-                        || nameLowercase.contains("tanglewood")) {
+                        || nameLowercase.contains("tanglewood") || nameLowercase.contains("elixir")) {
                     score += brandPercent * 8;
                 } else {
                     score += brandPercent * 4;
@@ -186,6 +186,7 @@ public class GuitarDAO {
             }
 
             Collections.sort(recommendResult.getGuitar());
+            
         } finally {
             if (stm != null) {
                 stm.close();

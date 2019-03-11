@@ -1,14 +1,9 @@
-(function () {       
-    function openPopup(){
-        window.location.href='#popup';
-        let popup = document.getElementById('popup');        
-        popup.style.visibility = 'visible';
-        popup.style.opacity = 1;
-    }
-
+(function () {
+    
     var Model = {
         guitars: [],
         currentPage: 0,
+        selectedGuitar: null,        
         paging: {
             numberOfPages: 0,
             pageSize: 10,
@@ -45,10 +40,22 @@
             FormView.init();
             PagingView.init();
             ResultView.init();
+            PopupView.init();
         },
-        newAttribute(name,content){
+        getSelectedGuitar: function(){
+            return Model.selectedGuitar;
+        },
+        openPopup: function (guitar) {            
+            Model.selectedGuitar = guitar;
+            PopupView.render();           
+        },
+        closePopup: function(){
+            Model.selectedGuitar = null; 
+            PopupView.render();
+        },
+        newAttribute(name, content) {
             let newAttr = {
-                name: name, 
+                name: name,
                 content: content
             }
             return newAttr;
@@ -73,7 +80,7 @@
             let params = MyUtils.getFormParams(form, Model.objForm);
             var self = this;
             MyUtils.callXhr('POST', url, params, function (dom) {
-                let guitars = self.parseGuitarFromDOM(dom);                
+                let guitars = self.parseGuitarFromDOM(dom);
                 self.bindGuitarToModel(guitars);
                 self.setNumberOfPages();
                 Model.currentPage = 0;
@@ -85,7 +92,7 @@
         parseGuitarFromDOM: function (dom) {
             let guitarDoms = dom.getElementsByTagName("guitar");
             let guitars = [];
-            
+
             for (let i = 0; i < guitarDoms.length; i++) {
                 let id = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'id');
                 let guitarName = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'name');
@@ -93,9 +100,9 @@
                 let price = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'price');
                 let imageUrl = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'imageUrl');
                 let weightedScore = MyUtils.getValueOfNodeDomByTagName(guitarDoms[i], 'weightedScore');
-                let attrDoms = guitarDoms[i].getElementsByTagNameNS('*','attribute');
+                let attrDoms = guitarDoms[i].getElementsByTagNameNS('*', 'attribute');
                 let attrs = [];
-                for (let j = 0; j < attrDoms.length; j++) {                    
+                for (let j = 0; j < attrDoms.length; j++) {
                     let attrName = MyUtils.getValueOfNodeDomByTagName(attrDoms[j], 'name');
                     let content = MyUtils.getValueOfNodeDomByTagName(attrDoms[j], 'content');
                     let attr = this.newAttribute(attrName, content);
@@ -132,7 +139,7 @@
 
             let price = document.createElement('span');
             price.setAttribute('class', 'item-price');
-            price.textContent = parseInt(guitar.price).toLocaleString('vi', { style: 'currency', currency: 'VND' });;
+            price.textContent = parseInt(guitar.price).toLocaleString('vi', { style: 'currency', currency: 'VND' });
 
             detail.append(price);
 
@@ -151,7 +158,7 @@
             ResultView.render();
             PagingView.render();
         },
-        getCurrentPage: function(){
+        getCurrentPage: function () {
             return Model.currentPage;
         },
         loadGuitarPerPage: function () {
@@ -165,7 +172,7 @@
             if (index == numPages) { // LAST PAGE
                 end = guitarLength;
             }
-            page = Model.guitars.slice(start, end);            
+            page = Model.guitars.slice(start, end);
             return page;
         }
     }
@@ -200,8 +207,7 @@
                 let item = HomeOctopus.createGuitarItem(guitar);
                 item.addEventListener('click', (function (copy) {
                     return function () {
-                        openPopup();
-                        console.log(guitar);
+                        HomeOctopus.openPopup(copy);
                     }
                 })(guitar));
                 $container.appendChild(item);
@@ -231,13 +237,70 @@
                 if (i == currentPage) {
                     pageItem.style.fontWeight = 'bolder';
                 }
-                
+
                 pageItem.addEventListener('click', function (e) {
                     e.preventDefault();
                     HomeOctopus.setCurrentPage(i);
                     window.location.href = '#result';
                 });
                 $paging.appendChild(pageItem);
+            }
+        }
+    }
+
+    var PopupView = {
+        init: function () {
+            this.popup = document.getElementById('popup');
+            this.closeButton = document.getElementById('popup-close');
+
+            this.closeButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                HomeOctopus.closePopup();
+            });
+
+            PopupView.render();
+        },
+        render: function () {
+            let $popup = this.popup;
+            let selectedGuitar = HomeOctopus.getSelectedGuitar();
+            let photoDiv = $popup.getElementsByClassName('popup__photo')[0];
+            let image = photoDiv.getElementsByTagName('img')[0];
+            let title = $popup.getElementsByClassName('popup-title')[0];
+            let price = $popup.getElementsByClassName('popup-price')[0];
+            let attrTable = $popup.getElementsByClassName('popup-attribute')[0];
+            
+            
+                        
+            if (selectedGuitar == null) { // CLOSE POPUP
+                $popup.style.visibility = 'hidden';
+                $popup.style.opacity = 0;                               
+            } else { // OPEN POPUP              
+                console.log(selectedGuitar);     
+                 // RESET ATTRIBUTE TABLE 
+                 attrTable.innerHTML = '';             
+
+                // BIND DATA TO VIEW 
+                image.setAttribute('src', selectedGuitar.imageUrl);
+                title.textContent = selectedGuitar.name;           
+                let score = document.createElement('span');     
+                score.setAttribute('class','popup-score');
+                score.textContent = selectedGuitar.weightedScore;
+                title.append(score);
+
+                price.textContent = parseInt(selectedGuitar.price).toLocaleString('vi', { style: 'currency', currency: 'VND' });
+                
+                selectedGuitar.attributes.forEach(function(item){
+                    let row = document.createElement('tr');
+                    let nameCol = '<td>'+ item.name +'</td>';
+                    let contentCol = '<td>'+ item.content +'</td>';
+                    row.innerHTML = nameCol + contentCol;
+                    attrTable.appendChild(row);
+                });
+                
+                // SET VISIBLE 
+                window.location.href = '#popup';
+                $popup.style.visibility = 'visible';
+                $popup.style.opacity = 1;                
             }
         }
     }

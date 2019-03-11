@@ -14,26 +14,31 @@
         <link rel="stylesheet" type="text/css" href="css/home.css"/>        
     </head>
     <body>                
-        <script type="text/javascript">
-            function closePopup() {
-                let popup = document.getElementById('popup');
-                console.log(popup);
-                popup.style.visibility = 'hidden';
-                popup.style.opacity = 0;
-            }
-        </script>
         <div class="popup" id="popup">
             <div class="popup-inner">
                 <div class="popup__photo">
                     <img src="https://images.unsplash.com/photo-1515224526905-51c7d77c7bb8?ixlib=rb-0.3.5&amp;s=9980646201037d28700d826b1bd096c4&amp;auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="">
                 </div>
                 <div class="popup__text">
-                    <h1>Lorem ipsum dolor sit amet</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ex velit, viverra non vulputate vitae, blandit vitae nisl. Nullam fermentum orci et erat viverra bibendum. Aliquam sed varius nibh, vitae mattis purus. Mauris elementum sapien non ullamcorper vulputate. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eget felis sit amet eros viverra pulvinar.</p>
+                    <h1 class="popup-title"></h1>
+                    <h1 class="popup-price"></h1>
+                    <table class="popup-attribute">
+                        
+                    </table>                    
                 </div>
-                <button class="popup__close" onclick="closePopup()">X</button>
+                <a class="popup__close" id="popup-close">X</a>
             </div>
         </div>
+        <div id="navbar" class="navbar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="#">Trang chủ</a>                    
+                </li>
+                <li class="nav-item">
+                    <a href="#">Top giá</a>                    
+                </li>
+            </ul>
+        </div>            
         <header id="question">
             <div class="header-image">
                 <div class="logo-inner">
@@ -114,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>           
             <div class="container" id="result">                
                 <div class="row">
                     <h2 class="center-in">KẾT QUẢ</h2>
