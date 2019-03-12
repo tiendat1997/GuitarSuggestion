@@ -131,7 +131,9 @@
                 <div class="row result-title">
                     <h2 class="center-in">KẾT QUẢ</h2>
                 </div>
-                <div class="row">                    
+                <div class="row" id="empty-row">                    
+                </div>
+                <div class="row" id="guitar-wrapper">                                        
                     <div class="masonry" id="guitar-container">
                         <!-- GUITAR LIST RESULT -->
                     </div>
@@ -154,7 +156,7 @@
         <div class="container">                
             <div class="row">                    
                 <p class="col-6 copyright-text">
-                    Copyright &copy; 2017 All Rights Reserved by Tien Dat
+                    Copyright &copy; 2019 All Rights Reserved by Tien Dat
                 </p>
             </div>
         </div>            

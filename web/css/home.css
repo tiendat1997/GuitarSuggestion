@@ -16,11 +16,13 @@ body * {
 }
 .nav > .nav-item:hover {
     text-decoration: underline;        
+    text-underline-position: under;
     font-weight: bold;
 }
 
 .nav > li.active {
     text-decoration: underline;    
+    text-underline-position: under;
     font-weight: bold;
 }
 
@@ -167,4 +169,16 @@ hr.line-break {
     height: 3px;
     background: #f06292;
     border: none;
+}
+
+.empty-message {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;   
+    padding-top: 200px;
+}
+
+
+footer {
+    padding: 10px 0;
 }

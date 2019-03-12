@@ -2,11 +2,18 @@ package tiendat.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tiendat.dao.GuitarDAO;
+import tiendat.dto.RecommendResultDTO;
+import tiendat.ultility.XMLUltils;
 
 /**
  *
@@ -20,8 +27,19 @@ public class TopGuitarServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String url = TOP_GUITAR_PAGE;
         try {
+            GuitarDAO dao = new GuitarDAO(); 
+            RecommendResultDTO result = dao.getTopGuitar();
+            String xml = XMLUltils.marshallToString(result);
+            request.setAttribute("LIST", xml);
+            
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
+        } catch (NamingException ex) {
+            Logger.getLogger(TopGuitarServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(TopGuitarServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TopGuitarServlet.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             out.close();
         }

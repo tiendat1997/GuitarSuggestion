@@ -1,9 +1,9 @@
 (function () {
-    
+
     var Model = {
         guitars: [],
         currentPage: 0,
-        selectedGuitar: null,        
+        selectedGuitar: null,
         paging: {
             numberOfPages: 0,
             pageSize: 10,
@@ -42,15 +42,15 @@
             ResultView.init();
             PopupView.init();
         },
-        getSelectedGuitar: function(){
+        getSelectedGuitar: function () {
             return Model.selectedGuitar;
         },
-        openPopup: function (guitar) {            
+        openPopup: function (guitar) {
             Model.selectedGuitar = guitar;
-            PopupView.render();           
+            PopupView.render();
         },
-        closePopup: function(){
-            Model.selectedGuitar = null; 
+        closePopup: function () {
+            Model.selectedGuitar = null;
             PopupView.render();
         },
         newAttribute(name, content) {
@@ -75,14 +75,14 @@
         getGuitars: function () {
             return Model.guitars;
         },
-        showLoader(){
+        showLoader() {
             let loader = document.getElementById('loader');
             let currClass = loader.getAttribute('class');
-            loader.setAttribute('class',currClass + ' loader-default is-active');
+            loader.setAttribute('class', currClass + ' loader-default is-active');
         },
-        hideLoader(){
+        hideLoader() {
             let loader = document.getElementById('loader');
-            loader.setAttribute('class','loader');
+            loader.setAttribute('class', 'loader');
         },
         recommendGuitars: function (form) {
             // show loader 
@@ -206,26 +206,36 @@
 
     var ResultView = {
         init: function () {
-            this.container = document.getElementById('guitar-container');
+            this.container = document.getElementById('guitar-container');        
+            this.emptyRow = document.getElementById('empty-row');    
             ResultView.render();
         },
         render: function () {
             let $container = this.container;
+            let $emptyRow = this.emptyRow;
 
             let guitars = HomeOctopus.loadGuitarPerPage();
             // CLEAR VIEW 
+            $emptyRow.innerHTML = '';
             $container.innerHTML = '';
 
-            guitars.forEach(function (guitar) {
-                let item = HomeOctopus.createGuitarItem(guitar);
-                item.addEventListener('click', (function (copy) {
-                    return function () {
-                        HomeOctopus.openPopup(copy);
-                    }
-                })(guitar));
-                $container.appendChild(item);
-            });
-
+            if (guitars != null && guitars.length > 0) {
+                guitars.forEach(function (guitar) {
+                    let item = HomeOctopus.createGuitarItem(guitar);
+                    item.addEventListener('click', (function (copy) {
+                        return function () {
+                            HomeOctopus.openPopup(copy);
+                        }
+                    })(guitar));
+                    $container.appendChild(item);
+                });
+            }
+            else {
+                let message = document.createElement('h1');
+                message.setAttribute('class','empty-message');
+                message.textContent = "Không có dữ liệu đàn guitar !";
+                $emptyRow.appendChild(message);
+            }
         }
     }
 
@@ -243,8 +253,8 @@
 
             for (let i = 0; i < numOfPages; i++) {
                 let pageItem = document.createElement('a');
-                pageItem.setAttribute('href', '#' + i);                
-                pageItem.textContent = i + 1;                
+                pageItem.setAttribute('href', '#' + i);
+                pageItem.textContent = i + 1;
                 if (i == currentPage) {
                     pageItem.className += 'active';
                 }
@@ -279,39 +289,39 @@
             let title = $popup.getElementsByClassName('popup-title')[0];
             let price = $popup.getElementsByClassName('popup-price')[0];
             let attrTable = $popup.getElementsByClassName('popup-attribute')[0];
-            
-            
-                        
+
+
+
             if (selectedGuitar == null) { // CLOSE POPUP
                 $popup.style.visibility = 'hidden';
-                $popup.style.opacity = 0;                               
+                $popup.style.opacity = 0;
             } else { // OPEN POPUP              
-                console.log(selectedGuitar);     
-                 // RESET ATTRIBUTE TABLE 
-                 attrTable.innerHTML = '';             
+                console.log(selectedGuitar);
+                // RESET ATTRIBUTE TABLE 
+                attrTable.innerHTML = '';
 
                 // BIND DATA TO VIEW 
                 image.setAttribute('src', selectedGuitar.imageUrl);
-                title.textContent = selectedGuitar.name;           
-                let score = document.createElement('span');     
-                score.setAttribute('class','popup-score');
+                title.textContent = selectedGuitar.name;
+                let score = document.createElement('span');
+                score.setAttribute('class', 'popup-score');
                 score.textContent = selectedGuitar.weightedScore;
                 title.append(score);
 
                 price.textContent = parseInt(selectedGuitar.price).toLocaleString('vi', { style: 'currency', currency: 'VND' });
-                
-                selectedGuitar.attributes.forEach(function(item){
+
+                selectedGuitar.attributes.forEach(function (item) {
                     let row = document.createElement('tr');
-                    let nameCol = '<td>'+ item.name +'</td>';
-                    let contentCol = '<td>'+ item.content +'</td>';
+                    let nameCol = '<td>' + item.name + '</td>';
+                    let contentCol = '<td>' + item.content + '</td>';
                     row.innerHTML = nameCol + contentCol;
                     attrTable.appendChild(row);
                 });
-                
+
                 // SET VISIBLE 
                 window.location.href = '#popup';
                 $popup.style.visibility = 'visible';
-                $popup.style.opacity = 1;                
+                $popup.style.opacity = 1;
             }
         }
     }

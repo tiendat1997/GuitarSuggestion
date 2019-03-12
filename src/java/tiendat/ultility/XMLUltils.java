@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.StringWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.XMLConstants;
@@ -34,6 +35,23 @@ import org.xml.sax.SAXException;
  * @author DATTTSE62330
  */
 public class XMLUltils {
+
+    public static <T> String marshallToString(T obj) {
+        try {
+            JAXBContext jaxb = JAXBContext.newInstance(obj.getClass());
+            Marshaller marshal = jaxb.createMarshaller();
+            marshal.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshal.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+            
+            StringWriter sw = new StringWriter();
+            marshal.marshal(obj, sw);
+            
+            return sw.toString();
+        } catch (JAXBException ex) {
+            Logger.getLogger(XMLUltils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     public static <T> void marshallToTransfer(T obj, OutputStream os) {
 

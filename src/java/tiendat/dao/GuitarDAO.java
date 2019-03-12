@@ -25,6 +25,106 @@ import tiendat.ultility.DBUtils;
  */
 public class GuitarDAO {
 
+    public RecommendResultDTO getTopGuitar() throws NamingException, SQLException, ClassNotFoundException {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        AttributeDAO attrDao = new AttributeDAO();
+        RecommendResultDTO recommendResult = new RecommendResultDTO();
+        try {
+            con = DBUtils.createConnection();
+            String sql = "select TOP 20 g.Id,g.Name,g.Category,g.ImageUrl,g.Price from Guitar g order by g.Price desc";
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("Id");
+                String name = rs.getString("Name");
+                String category = rs.getString("Category");
+                BigDecimal price = rs.getBigDecimal("Price");
+                String imageUrl = rs.getString("ImageUrl");
+                List<Attribute> attrList = attrDao.getAttributeByGuitarId(id);
+                Guitar.Attributes attributes = new Guitar.Attributes(attrList);
+                Guitar guitarDto = new Guitar(id, name, category, price, imageUrl, attributes);
+                recommendResult.getGuitar().add(guitarDto);
+            }
+        } finally {
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return recommendResult;
+    }
+
+    // WSM : weighted sum model
+    private double getScoreFromWSM(Guitar guitar, String genreName, double minPrice, double maxPrice, String bodyStyle, boolean isVietnam) {
+        double score = 0;
+        // SET UP criteria 
+        double genrePercent = 0.45;
+        double pricePercent = 0.1;
+        double stylePercent = 0.15;
+        double woodPercent = 0.15;
+        double originPercent = 0.1;
+        double brandPercent = 0.05;
+
+        String attrStr = guitar.getAttributes().toString().toLowerCase();
+        if (guitar.getCategory().toLowerCase().contains(genreName)) {
+            score += genrePercent * 10;
+        }
+        if (guitar.getPrice().doubleValue() >= minPrice && guitar.getPrice().doubleValue() <= maxPrice) {
+            score += pricePercent * 10;
+        }
+        if ((attrStr.contains("đầy") && bodyStyle.equals("full"))
+                || (attrStr.contains("khuyết") && bodyStyle.equals("cutaway"))) {
+            score += stylePercent * 10;
+        }
+        if ((attrStr.contains("việt") && isVietnam)
+                || (!attrStr.contains("việt") && !isVietnam)) {
+            score += originPercent * 10;
+        }
+                // Wood style 
+        // GỖ CAO CẤP
+        if (attrStr.contains("cẩm lai") || attrStr.contains("hồng sắc") || attrStr.contains("mun")
+                || attrStr.contains("rosewood") || attrStr.contains("óc chó") || attrStr.contains("walnut")
+                || attrStr.contains("thích") || attrStr.contains("maple") || attrStr.contains("cẩm")) {
+            score += woodPercent * 9;
+        } // GÕ TRUNG CẤP
+        else if (attrStr.contains("điệp") || attrStr.contains("còng") || attrStr.contains("thông")
+                || attrStr.contains("cườm") || attrStr.contains("dái ngựa") || attrStr.contains("mahogany")
+                || attrStr.contains("keo") || attrStr.contains("koa") || attrStr.contains("tuyết tùng")
+                || attrStr.contains("cồng") || attrStr.contains("còng") || attrStr.contains("thao lao")
+                || attrStr.contains("sitka") || attrStr.contains("cedar") || attrStr.contains("gụ")
+                || attrStr.contains("spruce ")) {
+            score += woodPercent * 7;
+        } // GỖ PHỔ THÔNG
+        else if (attrStr.contains("hồng đào") || attrStr.contains("laminate") || attrStr.contains("nato")) {
+            score += woodPercent * 5;
+        }
+
+        // GỖ NGUYÊN MIẾNG                
+        if (attrStr.contains("solid") || attrStr.contains("nguyên")) {
+            score += woodPercent * 1;
+        }
+        if (attrStr.contains("ép") || attrStr.contains("ván")) {
+            score -= woodPercent * 2;
+        }
+
+        // THƯƠNG HIỆU
+        String nameLowercase = guitar.getName().toLowerCase();
+        if (nameLowercase.contains("taylor") || nameLowercase.contains("yamaha")
+                || nameLowercase.contains("yamaha") || nameLowercase.contains("fender")
+                || nameLowercase.contains("takamine") || nameLowercase.contains("martin")
+                || nameLowercase.contains("tanglewood") || nameLowercase.contains("elixir")) {
+            score += brandPercent * 8;
+        } else {
+            score += brandPercent * 4;
+        }
+                
+        return score;
+    }
+
     public RecommendResultDTO recommendGuitar(String genre, String bodyStyle, String priceLevel, String origin) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
@@ -115,78 +215,14 @@ public class GuitarDAO {
                 List<Attribute> attrList = attrDao.getAttributeByGuitarId(id);
                 Guitar.Attributes attributes = new Guitar.Attributes(attrList);
                 Guitar guitarDto = new Guitar(id, name, category, price, imageUrl, attributes);
+                // Processing Score Weigted Score matrix             
+                double weightedScore = this.getScoreFromWSM(guitarDto, genreName, minPrice, maxPrice, bodyStyle, isVietnam);
+                guitarDto.setWeightedScore((float) weightedScore);
                 recommendResult.getGuitar().add(guitarDto);
             }
-
-            // Processing Score Weigted Score matrix 
-            // genre 50% , price 30% , origin 10% , bodyStyle 10%
-            double genrePercent = 0.45;
-            double pricePercent = 0.1;            
-            double stylePercent = 0.15;            
-            double woodPercent = 0.15;
-            double originPercent = 0.1;
-            double brandPercent = 0.05;
-            
-
-            for (Guitar guitar : recommendResult.getGuitar()) {
-                double score = 0;
-                String attrStr = guitar.getAttributes().toString().toLowerCase();
-                if (guitar.getCategory().toLowerCase().contains(genreName)) {
-                    score += genrePercent * 10;
-                }
-                if (guitar.getPrice().doubleValue() >= minPrice && guitar.getPrice().doubleValue() <= maxPrice) {
-                    score += pricePercent * 10;
-                }
-                if ((attrStr.contains("đầy") && bodyStyle.equals("full"))
-                        || (attrStr.contains("khuyết") && bodyStyle.equals("cutaway"))) {
-                    score += stylePercent * 10;
-                }
-                if ((attrStr.contains("việt") && isVietnam)
-                        || (!attrStr.contains("việt") && !isVietnam)) {
-                    score += originPercent * 10;
-                }
-                // Wood style 
-                // GỖ CAO CẤP
-                if (attrStr.contains("cẩm lai") || attrStr.contains("hồng sắc") || attrStr.contains("mun")
-                        || attrStr.contains("rosewood") || attrStr.contains("óc chó") || attrStr.contains("walnut")
-                        || attrStr.contains("thích") || attrStr.contains("maple") || attrStr.contains("cẩm")) {
-                    score += woodPercent * 9;
-                } // GÕ TRUNG CẤP
-                else if (attrStr.contains("điệp") || attrStr.contains("còng") || attrStr.contains("thông")
-                        || attrStr.contains("cườm") || attrStr.contains("dái ngựa") || attrStr.contains("mahogany")
-                        || attrStr.contains("keo") || attrStr.contains("koa") || attrStr.contains("tuyết tùng")
-                        || attrStr.contains("cồng") || attrStr.contains("còng") || attrStr.contains("thao lao")
-                        || attrStr.contains("sitka") || attrStr.contains("cedar") || attrStr.contains("gụ")
-                        || attrStr.contains("spruce ")) {
-                    score += woodPercent * 7;
-                } // GỖ PHỔ THÔNG
-                else if (attrStr.contains("hồng đào") || attrStr.contains("laminate") || attrStr.contains("nato")) {
-                    score += woodPercent * 5;
-                }
-
-                // GỖ NGUYÊN MIẾNG                
-                if (attrStr.contains("solid") || attrStr.contains("nguyên")) {
-                    score += woodPercent * 1;
-                }
-                if (attrStr.contains("ép") || attrStr.contains("ván")) {
-                    score -= woodPercent * 2;
-                }
-
-                // THƯƠNG HIỆU
-                String nameLowercase = guitar.getName().toLowerCase();
-                if (nameLowercase.contains("taylor") || nameLowercase.contains("yamaha")
-                        || nameLowercase.contains("yamaha") || nameLowercase.contains("fender")
-                        || nameLowercase.contains("takamine") || nameLowercase.contains("martin")
-                        || nameLowercase.contains("tanglewood") || nameLowercase.contains("elixir")) {
-                    score += brandPercent * 8;
-                } else {
-                    score += brandPercent * 4;
-                }
-                guitar.setWeightedScore((float) score);
-            }
-
+                      
             Collections.sort(recommendResult.getGuitar());
-            
+
         } finally {
             if (stm != null) {
                 stm.close();
