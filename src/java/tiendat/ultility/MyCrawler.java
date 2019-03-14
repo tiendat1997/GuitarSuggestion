@@ -36,7 +36,7 @@ import tiendat.generatedObject.Guitar;
  *
  * @author DATTTSE62330
  */
-public class MyCrawler implements Serializable{
+public class MyCrawler implements Serializable {
 
     public static void saveToXMLFile(DOMResult dom, String resultFileName) throws TransformerConfigurationException, TransformerException, FileNotFoundException {
 
@@ -74,22 +74,27 @@ public class MyCrawler implements Serializable{
             String categorySchemaPath = realPath + CrawlCommon.PATH_SCHEMA + "category.xsd";
             boolean isValidated = XMLUltils.validateXML(category, xmlOutput, categorySchemaPath);
             if (isValidated) {
-                categoryDao.addCategory(category);
+
                 for (Guitar guitar : category.getGuitar()) {
-                    // ADD GUITAR 
-                    System.out.println("Guitar: ");
-                    System.out.println(guitar.getName());
-                    System.out.println(guitar.getPrice());
-                    System.out.println(guitar.getCategory());
-                    System.out.println(guitar.getImageUrl());                                        
-                    guitarDao.addGuitar(guitar);                                 
-                    // GET ID OF GUITAR 
-                    int guitarId = guitarDao.getGuitarByName(guitar.getName());
-                    // ADD ATTRIBUTE
-                    for (Attribute attr : guitar.getAttributes().getAttribute()) {
-                        System.out.println("Attribute " + attr.getName() + " " + attr.getContent());
-                        attrDao.addAttribute(attr, guitarId);
-                    }                                        
+                    if (guitar.getCategory().toLowerCase().contains("phụ kiện") == false) {
+                        int existedGuitar = guitarDao.getGuitarByName(guitar.getName());
+                        if (existedGuitar == 0) {
+                            // ADD GUITAR 
+                            System.out.println("Guitar: ");
+                            System.out.println(guitar.getName());
+                            System.out.println(guitar.getPrice());
+                            System.out.println(guitar.getCategory());
+                            System.out.println(guitar.getImageUrl());
+                            guitarDao.addGuitar(guitar);
+                            // GET ID OF GUITAR 
+                            int guitarId = guitarDao.getGuitarByName(guitar.getName());
+                            // ADD ATTRIBUTE
+                            for (Attribute attr : guitar.getAttributes().getAttribute()) {
+                                System.out.println("Attribute " + attr.getName() + " " + attr.getContent());
+                                attrDao.addAttribute(attr, guitarId);
+                            }
+                        }
+                    }
                 }
             }
             System.out.println("---------------------------------------");

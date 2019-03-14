@@ -12,7 +12,7 @@
         <title>Login</title>
     </head>
     <body>
-         <form action="AdminServlet" method="POST">
+         <form action="LoginServlet" method="POST">
             Username: <input type="text" name="txtUsername"/>
             Password: <input type="password" name="txtPassword"/>
             <input type="submit" name="btAction" value="Login"/>

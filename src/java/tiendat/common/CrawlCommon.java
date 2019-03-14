@@ -22,13 +22,14 @@ public class CrawlCommon {
     public static final String CONFIG_XML_DUYGUITAR = "WEB-INF/document/duy_guitar.xml";
     public static final String CONFIG_XML_BADONGUITAR = "WEB-INF/document/config_badon_guitar.xml";
     public static final String CONFIG_XML_GUITAR_STATION = "WEB-IN/document/config_guitar_station.xml";
-    public static final String CONFIG_XML_NHACCU_TIENDAT = "WEB-INF/document/config_nhaccu_tiendat.xml";
+    public static final String CONFIG_XML_NHACCU_TIENDAT = "WEB-INF/document/config_nhaccu_tiendat.xml";    
     
     // XSL
     public static final String XSL_DUYGUITAR = "WEB-INF/xsl/duy_guitar.xsl";
     public static final String XSL_BADONGUITAR = "WEB-INF/xsl/badon_guitar.xsl";
     public static final String XSL_GUITAR_STATION = "WEB-INF/xsl/guitar_station.xsl";
     public static final String XSL_NHACCU_TIENDAT = "WEB-INF/xsl/nhaccu_tiendat.xsl";
+    public static final String XSL_GOLDMUSIC = "WEB-INF/xsl/goldmusic.xsl";
     
 
     //URL
@@ -37,6 +38,7 @@ public class CrawlCommon {
     public static final String URL_GUITARTEEMO = "http://www.guitarteemo.com";
     public static final String URL_GUITAR_BADON = "http://guitarbadon.vn";
     public static final String URL_NHACCU_TIENDAT = "https://nhaccutiendat.vn";
+    public static final String URL_GOLDMUSIC = "https://goldmusic.vn";
     
     
     // PROPERTIES

@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import tiendat.common.RoleCommon;
 import tiendat.dao.AccountDAO;
 
@@ -25,30 +26,48 @@ import tiendat.dao.AccountDAO;
  * @author DATTTSE62330
  */
 public class LoginServlet extends HttpServlet {
-    private static final String ADMIN_HOME = "adminHome.jsp";
-    private static final String LOGIN_PAGE = "login.jsp";
+
+    private static final String ADMIN_SERVLET = "AdminServlet";
+    private final String LOGIN_PAGE = "login.jsp";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String url = LOGIN_PAGE;
         try {
-            AccountDAO accDao = new AccountDAO();
-            String username = request.getParameter("txtUsername");
-            String password = request.getParameter("txtPassword");
-            boolean isLogin = accDao.checkLogin(username, password, RoleCommon.ADMIN_ROLE);
-            if (isLogin) {
-                url = ADMIN_HOME;
+            String action = request.getParameter("btAction");
+            if (action == null) {
+
+            } else if (action.equals("Login")) {
+                AccountDAO accDao = new AccountDAO();
+                String username = request.getParameter("txtUsername");
+                String password = request.getParameter("txtPassword");
+                int roleId = accDao.checkLogin(username, password);
+                if (roleId > -1) {
+                    // LOGIN SUCCESS 
+                    HttpSession session = request.getSession(true);
+
+                    if (roleId == RoleCommon.ADMIN_ROLE) {
+                        // ADMIN HOME
+                        session.setAttribute("ROLE", RoleCommon.ADMIN_ROLE);
+                        url = ADMIN_SERVLET;
+                    } else {
+                        // FOR USER
+                    }
+                } else {
+                    // LOGIN FAILED
+                }
             }
-            
-            RequestDispatcher rd = request.getRequestDispatcher(url);
-            rd.forward(request, response);
+
+            response.sendRedirect(url);
         } catch (SQLException ex) {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NamingException ex) {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
         } finally {
             out.close();
         }

@@ -51,12 +51,10 @@
                             </xsl:element>
                         </xsl:if>              
                     </xsl:for-each>
-                </xsl:if>
-                
+                </xsl:if>                
             </xsl:for-each>
         </xsl:element>      
     </xsl:template>        
-    
     
     <xsl:template name="guitarList">
         <xsl:param name="aElement"/>  

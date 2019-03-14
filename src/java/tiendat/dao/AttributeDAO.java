@@ -56,8 +56,14 @@ public class AttributeDAO implements Serializable{
             con = DBUtils.createConnection();
             String sql = "{call AddAttribute(?,?,?)}";
             stm = con.prepareCall(sql);
-            stm.setString(1, attribute.getName().trim());
-            stm.setString(2, attribute.getContent().trim());
+            String attrName = attribute.getName();
+            attrName = attrName.replace(".", "").replace("-", "");
+            
+            String attrContent = attribute.getContent();
+            attrContent = attrContent.replace(".", "").replace("-", "");
+            
+            stm.setString(1, attrName.trim());           
+            stm.setString(2, attrContent.trim());
             stm.setInt(3, guitarId);
             boolean result = stm.execute();
             if (result) {

@@ -31,27 +31,40 @@ public class MyURIResolver implements URIResolver, Serializable {
 
     @Override
     public Source resolve(String href, String base) throws TransformerException {
+        URL url;
+        URLConnection connection = null;
+        InputStream is = null;
+        StreamSource ss = null;
         if (href != null && (href.indexOf(CrawlCommon.URL_GUITAR_DUY) == 0
                 || href.indexOf(CrawlCommon.URL_GUITAR_BADON) == 0
                 || href.indexOf(CrawlCommon.URL_GUITAR_STATION) == 0
-                || href.indexOf(CrawlCommon.URL_NHACCU_TIENDAT) == 0)) {
+                || href.indexOf(CrawlCommon.URL_NHACCU_TIENDAT) == 0
+                || href.indexOf(CrawlCommon.URL_GOLDMUSIC) == 0)) {
             try {
-                URL url = new URL(href);
-                URLConnection connection = url.openConnection();
+                url = new URL(href);
+                connection = url.openConnection();
                 connection.addRequestProperty("User-Agent", CrawlCommon.USER_AGENT);
-                connection.setReadTimeout(8 * 1000);
-                connection.setConnectTimeout(8 * 1000);
+                connection.setReadTimeout(20 * 1000);
+                connection.setConnectTimeout(20 * 1000);
                 System.out.println("Connect: " + href);
-                InputStream httpResult = connection.getInputStream();
-                StreamSource ss = preProcessInputStream(httpResult);
-                return ss;
+                is = connection.getInputStream();
+                ss = preProcessInputStream(is);
+                                                
             } catch (MalformedURLException ex) {
                 Logger.getLogger(MyURIResolver.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
                 Logger.getLogger(MyURIResolver.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                if (is != null) {
+                    try {
+                        is.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(MyURIResolver.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
             }
         }
-        return null;
+        return ss;
     }
 
     private StreamSource preProcessInputStream(InputStream httpResult) throws IOException {

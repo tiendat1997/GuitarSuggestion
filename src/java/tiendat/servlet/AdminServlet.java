@@ -12,32 +12,47 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import tiendat.common.RoleCommon;
 
 /**
  *
  * @author DATTTSE62330
  */
 public class AdminServlet extends HttpServlet {
-   private final String LOGIN_SERVLET = "LoginServlet";
-   private final String CRAWL_SERVLET = "CrawlServlet";
-   private final String LOGIN_PAGE = "login.jsp";
+
+    private static final String ADMIN_HOME = "adminHome.jsp";
+    private final String CRAWL_SERVLET = "CrawlServlet";
+    private static final String LOGIN_SERVLET = "LoginServlet";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String url = LOGIN_PAGE; 
-        try {         
-            String action = request.getParameter("btAction");
-            if (action == null) {
-                
-            } else if (action.equals("Login")){
+        String url = ADMIN_HOME;
+        try {
+            HttpSession session = request.getSession(true);
+            int roleId = -1;
+
+            Object obj = session.getAttribute("ROLE");
+            if (obj != null) {
+                roleId = (int) obj;
+            }
+            if (roleId == RoleCommon.ADMIN_ROLE) {
+
+                String action = request.getParameter("btAction");
+                if (action == null) {
+
+                } else if (action.equals("Crawl")) {
+                    url = CRAWL_SERVLET;
+                }
+            } else {
                 url = LOGIN_SERVLET;
-            } else if (action.equals("Crawl")) {
-                url = CRAWL_SERVLET;
             }
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
-            
+        } catch (Exception ex) {
+            ex.printStackTrace();
         } finally {
             out.close();
         }

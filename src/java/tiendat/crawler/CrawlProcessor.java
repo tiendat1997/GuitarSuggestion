@@ -34,6 +34,11 @@ public class CrawlProcessor implements Serializable {
         System.out.println("REALPATH: " + realPath);
 
         xmlConfigPath = CrawlCommon.CONFIG_WEBCRAWL;
+        
+        // GOLDMUSIC
+        resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_goldmusic.xml";
+        xslPath = CrawlCommon.XSL_GOLDMUSIC;
+        runCrawl(xmlConfigPath, xslPath, resultFilePath, realPath);
         // NHACCUTIENDAT
         resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_nhaccu_tiendat.xml";
         xslPath = CrawlCommon.XSL_NHACCU_TIENDAT;
@@ -63,7 +68,8 @@ public class CrawlProcessor implements Serializable {
             Logger.getLogger(TestCrawler.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransformerException ex) {
             Logger.getLogger(TestCrawler.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (JAXBException ex) {
+        } 
+        catch (JAXBException ex) {
             Logger.getLogger(TestCrawler.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(TestCrawler.class.getName()).log(Level.SEVERE, null, ex);

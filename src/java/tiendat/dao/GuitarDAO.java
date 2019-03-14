@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 import javax.naming.NamingException;
+import tiendat.common.GuitarType;
 import tiendat.dto.RecommendResultDTO;
 import tiendat.generatedObject.Attribute;
 import tiendat.generatedObject.Guitar;
@@ -27,14 +28,16 @@ public class GuitarDAO {
 
     public RecommendResultDTO getTopGuitar() throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
-        PreparedStatement stm = null;
+        PreparedStatement stm = null;        
         ResultSet rs = null;
         AttributeDAO attrDao = new AttributeDAO();
         RecommendResultDTO recommendResult = new RecommendResultDTO();
         try {
             con = DBUtils.createConnection();
-            String sql = "select TOP 20 g.Id,g.Name,g.Category,g.ImageUrl,g.Price from Guitar g order by g.Price desc";
-            stm = con.prepareStatement(sql);
+            String sql = "{call GetTopGuitarByPrice(?,?)}";            
+            stm = con.prepareCall(sql);
+            stm.setInt(1, 20);
+            stm.setInt(2, GuitarType.ACOUSTIC);
             rs = stm.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("Id");
@@ -59,32 +62,37 @@ public class GuitarDAO {
     }
 
     // WSM : weighted sum model
-    private double getScoreFromWSM(Guitar guitar, String genreName, double minPrice, double maxPrice, String bodyStyle, boolean isVietnam) {
-        double score = 0;
+    private double getScoreFromWSM(Guitar guitar, String cateName, double minPrice, double maxPrice, String bodyStyle, boolean isVietnam) {
+        double score = 0; 
         // SET UP criteria 
         double genrePercent = 0.45;
         double pricePercent = 0.1;
         double stylePercent = 0.15;
         double woodPercent = 0.15;
         double originPercent = 0.1;
-        double brandPercent = 0.05;
+        double brandPercent = 0.05; 
 
-        String attrStr = guitar.getAttributes().toString().toLowerCase();
-        if (guitar.getCategory().toLowerCase().contains(genreName)) {
+        if (guitar.getCategory().toLowerCase().equals(cateName.toLowerCase())) {
             score += genrePercent * 10;
         }
         if (guitar.getPrice().doubleValue() >= minPrice && guitar.getPrice().doubleValue() <= maxPrice) {
             score += pricePercent * 10;
         }
-        if ((attrStr.contains("đầy") && bodyStyle.equals("full"))
-                || (attrStr.contains("khuyết") && bodyStyle.equals("cutaway"))) {
+        
+        String attrStr = guitar.getAttributes().toString().toLowerCase();
+        if (bodyStyle.equals("full") && (attrStr.contains("đầy") || attrStr.contains("dreadnought"))){
             score += stylePercent * 10;
         }
+        
+        if (bodyStyle.equals("cutaway") && (attrStr.contains("khuyết"))) {
+            score += stylePercent * 10;
+        }
+        
         if ((attrStr.contains("việt") && isVietnam)
                 || (!attrStr.contains("việt") && !isVietnam)) {
             score += originPercent * 10;
         }
-                // Wood style 
+        // Wood style 
         // GỖ CAO CẤP
         if (attrStr.contains("cẩm lai") || attrStr.contains("hồng sắc") || attrStr.contains("mun")
                 || attrStr.contains("rosewood") || attrStr.contains("óc chó") || attrStr.contains("walnut")
@@ -111,9 +119,9 @@ public class GuitarDAO {
             score -= woodPercent * 2;
         }
 
-        // THƯƠNG HIỆU
+        // BRANING SCORE 
         String nameLowercase = guitar.getName().toLowerCase();
-        if (nameLowercase.contains("taylor") || nameLowercase.contains("yamaha")
+        if (nameLowercase.contains("taylor") || nameLowercase.contains("suzuki")
                 || nameLowercase.contains("yamaha") || nameLowercase.contains("fender")
                 || nameLowercase.contains("takamine") || nameLowercase.contains("martin")
                 || nameLowercase.contains("tanglewood") || nameLowercase.contains("elixir")) {
@@ -121,7 +129,7 @@ public class GuitarDAO {
         } else {
             score += brandPercent * 4;
         }
-                
+
         return score;
     }
 
@@ -137,20 +145,28 @@ public class GuitarDAO {
             con = DBUtils.createConnection();
 
             // GET BY GENRE  
-            String genreName = "";
+            String cateName = "";
+            int cateId = 0;
             switch (genre) {
-                case "acoustic":
-                    genreName = "acoustic";
+                case "modern":
+                    cateId = GuitarType.ACOUSTIC;
+                    cateName = GuitarType.ACOUSTIC_STRING;
                     break;
                 case "classic":
-                    genreName = "classic";
+                    cateId = GuitarType.CLASSIC;
+                    cateName = GuitarType.CLASSICAL_STRING;
                     break;
                 case "electric":
-                    genreName = "electric";
+                    cateId = GuitarType.ELECTRIC;
+                    cateName = GuitarType.ELECTRIC_STRING;
                     break;
                 case "vongco":
-                    genreName = "vọng cổ";
+                    cateId = GuitarType.VONGCO;
+                    cateName = GuitarType.VONGCO_STRING;
                     break;
+                case "ukulele":
+                    cateId = GuitarType.UKULELE;
+                    cateName = GuitarType.UKULELE_STRING;
                 default:
                     break;
             }
@@ -199,7 +215,7 @@ public class GuitarDAO {
             String sql = "{call RecommendGuitar(?,?,?,?,?)}";
 
             stm = con.prepareStatement(sql);
-            stm.setNString(1, "%" + genreName + "%");
+            stm.setInt(1, cateId);
             stm.setDouble(2, minPrice);
             stm.setDouble(3, maxPrice);
             stm.setNString(4, attrBody);
@@ -216,11 +232,11 @@ public class GuitarDAO {
                 Guitar.Attributes attributes = new Guitar.Attributes(attrList);
                 Guitar guitarDto = new Guitar(id, name, category, price, imageUrl, attributes);
                 // Processing Score Weigted Score matrix             
-                double weightedScore = this.getScoreFromWSM(guitarDto, genreName, minPrice, maxPrice, bodyStyle, isVietnam);
+                double weightedScore = this.getScoreFromWSM(guitarDto, cateName, minPrice, maxPrice, bodyStyle, isVietnam);
                 guitarDto.setWeightedScore((float) weightedScore);
                 recommendResult.getGuitar().add(guitarDto);
             }
-                      
+
             Collections.sort(recommendResult.getGuitar());
 
         } finally {
@@ -265,12 +281,30 @@ public class GuitarDAO {
         try {
             con = DBUtils.createConnection();
             if (con != null) {
-                String sql = "{call AddGuitar(?,?,?,?)}";
+                String sql = "{call AddGuitar(?,?,?,?,?)}";
                 stm = con.prepareCall(sql);
                 stm.setString(1, guitar.getName());
-                stm.setString(2, guitar.getCategory().trim());
+                stm.setString(2, guitar.getCategory().trim()); // DESCRIPTION IN TABLE GUITAR
                 stm.setDouble(3, guitar.getPrice().doubleValue());
                 stm.setString(4, guitar.getImageUrl());
+                // SET CATEGORY ID 
+                String categoryName = guitar.getCategory().toLowerCase();
+                String guitarName = guitar.getName().toLowerCase();
+                int cateId;
+                if (guitarName.contains(GuitarType.ACOUSTIC_STRING)) {
+                    cateId = GuitarType.ACOUSTIC;
+                } else if (guitarName.contains(GuitarType.CLASSICAL_STRING)) {
+                    cateId = GuitarType.CLASSIC;
+                } else if (guitarName.contains(GuitarType.ELECTRIC_STRING) || guitarName.contains(GuitarType.BASS_STRING)) {
+                    cateId = GuitarType.ELECTRIC;
+                } else if (guitarName.contains(GuitarType.UKULELE_STRING)) {
+                    cateId = GuitarType.UKULELE;
+                } else if (guitarName.contains(GuitarType.VONGCO_STRING)) {
+                    cateId = GuitarType.VONGCO;
+                } else {
+                    cateId = GuitarType.ACOUSTIC;
+                }
+                stm.setInt(5, cateId);
 
                 boolean result = stm.execute();
                 if (result) {

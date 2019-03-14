@@ -19,22 +19,21 @@ import tiendat.ultility.DBUtils;
  */
 public class AccountDAO implements Serializable {
 
-    public boolean checkLogin(String username, String password, int roleId) throws SQLException, NamingException, ClassNotFoundException {
+    public int checkLogin(String username, String password) throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null; 
-        boolean result = false; 
+        int roleId = -1; 
         try {
             con = DBUtils.createConnection(); 
-            String sql = "select top 1 * from Account where Username=? and Password=? and RoleId=?";
+            String sql = "select top 1 * from Account where Username=? and Password=?";
                     
             stm = con.prepareStatement(sql);
             stm.setString(1, username);
             stm.setString(2, password);
-            stm.setInt(3, roleId);
-            rs = stm.executeQuery(); 
+            rs = stm.executeQuery();
             if (rs.next()) {
-                result = true;
+                roleId = rs.getInt("RoleId");
             }
         } finally {
             if (stm != null) {
@@ -44,6 +43,6 @@ public class AccountDAO implements Serializable {
                 con.close();
             }
         }
-        return result;
+        return roleId;
     }
 }

@@ -55,10 +55,11 @@
 .popup__text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+/*    justify-content: center;*/
     width: 60%;
     height: 100%;
     padding: 2rem;
+    overflow-y: scroll;
 }
 
 .popup__text h1 {
