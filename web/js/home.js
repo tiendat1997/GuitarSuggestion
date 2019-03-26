@@ -9,24 +9,29 @@
             pageSize: 10,
         },
         objForm: [{
-            type: 'radio',
-            name: 'music-genre'
+            type: 'select',
+            name: 'music-genre',
+            required: true,
         },
         {
-            type: 'radio',
-            name: 'body-style'
+            type: 'select',
+            name: 'body-style',
+            required: true,
         },
         {
-            type: 'radio',
-            name: 'price-level'
+            type: 'select',
+            name: 'price-level',
+            required: true,
         },
         {
-            type: 'radio',
-            name: 'origin'
+            type: 'select',
+            name: 'origin',
+            required: true,
         },
         {
             type: 'hidden',
-            name: 'btAction'
+            name: 'btAction',
+            required: true,
         }],
         init: function () {
             this.currentPage = 0;
@@ -83,11 +88,13 @@
         hideLoader() {
             let loader = document.getElementById('loader');
             loader.setAttribute('class', 'loader');
-        },
+        },       
         recommendGuitars: function (form) {
+            // validation
+
             // show loader 
             this.showLoader();
-            let url = 'DispatchServlet';
+            let url = 'api/guitar/recommend'; // OLD: DispatchServlet
             let params = MyUtils.getFormParams(form, Model.objForm);
             var self = this;
             MyUtils.callXhr('POST', url, params, function (dom) {
@@ -138,7 +145,7 @@
 
             let score = document.createElement('span');
             score.setAttribute('class', 'score');
-            score.textContent = guitar.weightedScore;
+            score.textContent = parseFloat(guitar.weightedScore).toPrecision(3);
 
             let imgCover = document.createElement('img');
             imgCover.setAttribute('src', guitar.imageUrl);
@@ -206,8 +213,8 @@
 
     var ResultView = {
         init: function () {
-            this.container = document.getElementById('guitar-container');        
-            this.emptyRow = document.getElementById('empty-row');    
+            this.container = document.getElementById('guitar-container');
+            this.emptyRow = document.getElementById('empty-row');
             ResultView.render();
         },
         render: function () {
@@ -232,7 +239,7 @@
             }
             else {
                 let message = document.createElement('h1');
-                message.setAttribute('class','empty-message');
+                message.setAttribute('class', 'empty-message');
                 message.textContent = "Không có dữ liệu đàn guitar !";
                 $emptyRow.appendChild(message);
             }
@@ -291,7 +298,6 @@
             let attrTable = $popup.getElementsByClassName('popup-attribute')[0];
 
 
-
             if (selectedGuitar == null) { // CLOSE POPUP
                 $popup.style.visibility = 'hidden';
                 $popup.style.opacity = 0;
@@ -305,7 +311,7 @@
                 title.textContent = selectedGuitar.name;
                 let score = document.createElement('span');
                 score.setAttribute('class', 'popup-score');
-                score.textContent = selectedGuitar.weightedScore;
+                score.textContent = parseFloat(selectedGuitar.weightedScore).toPrecision(3);
                 title.append(score);
 
                 price.textContent = parseInt(selectedGuitar.price).toLocaleString('vi', { style: 'currency', currency: 'VND' });

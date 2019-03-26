@@ -7,12 +7,14 @@ package tiendat.ultility;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletOutputStream;
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -20,7 +22,9 @@ import javax.xml.bind.Marshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.stream.XMLStreamWriter;
 import javax.xml.transform.sax.SAXSource;
+import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
@@ -42,10 +46,10 @@ public class XMLUltils {
             Marshaller marshal = jaxb.createMarshaller();
             marshal.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshal.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
-            
+
             StringWriter sw = new StringWriter();
             marshal.marshal(obj, sw);
-            
+
             return sw.toString();
         } catch (JAXBException ex) {
             Logger.getLogger(XMLUltils.class.getName()).log(Level.SEVERE, null, ex);

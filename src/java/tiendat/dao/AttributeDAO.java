@@ -30,7 +30,7 @@ public class AttributeDAO implements Serializable{
         List<Attribute> attrResult = new ArrayList<>(); 
         try {
             con = DBUtils.createConnection();
-            String sql = "Select * from Attribute a where a.GuitarId = ?";
+            String sql = "Select a.Name,a.Content from Attribute a where a.GuitarId = ?";
             stm = con.prepareStatement(sql);
             stm.setInt(1, guitarId);
             rs = stm.executeQuery(); 

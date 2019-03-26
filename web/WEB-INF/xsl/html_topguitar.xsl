@@ -23,9 +23,15 @@
                 </div>
                 <div class="header__item">                    
                     <div class="header-row">                        
-                        <div class="header__item"><p>Tên</p></div>
-                        <div class="header__item"><p>Loại</p></div>
-                        <div class="header__item"><p>Giá</p></div>
+                        <div class="header__item">
+                            <p>Tên</p>
+                        </div>
+                        <div class="header__item">
+                            <p>Loại</p>
+                        </div>
+                        <div class="header__item">
+                            <p>Giá</p>
+                        </div>
                     </div>
                 </div>                    
             </div>            
@@ -39,42 +45,76 @@
                                 </xsl:attribute>
                             </img>                                 
                         </div>
-                        <div class="table-data">
-                            <div class="row">                                
-                                <div class="table-data" style="width:20%">
-                                    <xsl:value-of select="ns3:name"/>                            
-                                </div>
+                        <div class="table-data">                                             
+                            <div class="row">                                                    
+                                <div class="table-data" style="width:20%; padding: 5 0;">
+                                    <b>
+                                        <xsl:value-of select="ns3:name"/>                                         
+                                    </b>   
+                                    <hr/>
+                                    <b style="color:#f5104d;">
+                                        Điểm: <xsl:value-of select="ns3:weightedScore"/>                                         
+                                    </b>    
+                                </div>                                
                                 <div class="table-data" style="width:15%">
-                                    <xsl:value-of select="ns3:category"/>                            
+                                    <b>
+                                        <xsl:value-of select="ns3:category"/>
+                                    </b>
                                 </div>
                                 <div class="table-data" style="width:15%"> 
-                                    <xsl:value-of select="ns3:price"/>
-                                    <span> đ</span>                  
+                                    <b>
+                                        <xsl:if test="contains(ns3:price,'.')">
+                                            <xsl:value-of select="substring-before(ns3:price,'.')"/>
+                                        </xsl:if>                                        
+                                        <xsl:if test="not(contains(ns3:price,'.'))">
+                                            <xsl:value-of select="ns3:price"/>
+                                        </xsl:if>
+                                        <span> đ</span>                  
+                                    </b>
                                 </div>
-                            </div>
-                            <hr/>
-                            <div class="row">
+                            </div>                                
+                            <!--                            <hr class="underline"/>-->
+                            <div class="row">                                
                                 <div class="table-data" style="width:40%">
-                                    <ul>
-                                        <xsl:variable name="attributes" select="ns3:attributes/ns2:attribute"/>
-                                        <xsl:if test="$attributes">
-                                            <xsl:for-each select="$attributes">
-                                                <li class="row">
-                                                    <div class="col-4">
-                                                        <xsl:value-of select="ns2:name"/>
-                                                    </div>
-                                                    <div class="col-8">                                            
-                                                        <xsl:value-of select="ns2:content"/>
-                                                    </div>
-                                                </li>
-                                            </xsl:for-each>
-                                        </xsl:if>
-                                        <xsl:if test="not(boolean($attributes))">
-                                            <li>
-                                                Không chứa thuộc tính
-                                            </li>
-                                        </xsl:if>
-                                    </ul>
+                                    <div class="wrap-collabsible">
+                                        <input class="toggle" type="checkbox" checked="checked">
+                                            <xsl:attribute name="id">                                            
+                                                <xsl:value-of select="concat('guitar-',ns3:id)"/>
+                                            </xsl:attribute>
+                                        </input>       
+                                        <label class="lbl-toggle">
+                                            <xsl:attribute name="for">
+                                                <xsl:value-of select="concat('guitar-',ns3:id)"/>
+                                            </xsl:attribute>
+                                            Chi tiết
+                                        </label>                                 
+                                        <div class="collapsible-content">
+                                            <div class="content-inner">
+                                                <ul>
+                                                    <xsl:variable name="attributes" select="ns3:attributes/ns2:attribute"/>
+                                                    <xsl:if test="$attributes">
+                                                        <xsl:for-each select="$attributes">
+                                                            <li class="row">
+                                                                <div class="col-4 attr-name">
+                                                                    <xsl:value-of select="ns2:name"/>
+                                                                </div>
+                                                                <div class="col-8 attr-content">                                            
+                                                                    <xsl:value-of select="ns2:content"/>
+                                                                </div>
+                                                            </li>
+                                                        </xsl:for-each>
+                                                    </xsl:if>
+                                                    <xsl:if test="not(boolean($attributes))">
+                                                        <li class="row">
+                                                            <div class="col-12 attr-name">
+                                                                Không chứa thuộc tính
+                                                            </div>                                                           
+                                                        </li>
+                                                    </xsl:if>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>                                    
                                 </div>          
                             </div>
                         </div>                                                        

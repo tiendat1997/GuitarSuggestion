@@ -20,17 +20,27 @@ import tiendat.ultility.XMLUltils;
  * @author DATTTSE62330
  */
 public class TopGuitarServlet extends HttpServlet {
+
     private final String TOP_GUITAR_PAGE = "topGuitar.jsp";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String url = TOP_GUITAR_PAGE;
         try {
-            GuitarDAO dao = new GuitarDAO(); 
-            RecommendResultDTO result = dao.getTopGuitar();
+            int cateId = 0;
+            String cateStr = request.getParameter("cateId");
+            if (cateStr != null) {
+                cateId = Integer.parseInt(cateStr);
+            }
+            GuitarDAO dao = new GuitarDAO();
+//            RecommendResultDTO result = dao.getTopGuitar(cateId);
+            RecommendResultDTO result = dao.getBestGuitar(cateId);
             String xml = XMLUltils.marshallToString(result);
+            
             request.setAttribute("LIST", xml);
+            request.setAttribute("CATE_ID", cateId);
             
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

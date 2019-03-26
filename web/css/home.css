@@ -1,56 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-body * { 
-    font-family: 'Roboto', sans-serif;    
-}
-.navbar {
-
-}
-.nav {
-    width: 100%;
-    text-align: center;        
-    /*    border-bottom: 1px solid #f06292;*/
-}
-.nav > .nav-item {
-    font-size: 1.2rem;        
-    display: inline-block;
-    margin: 5px 5px;
-}
-.nav > .nav-item:hover {
-    text-decoration: underline;        
-    text-underline-position: under;
-    font-weight: bold;
-}
-
-.nav > li.active {
-    text-decoration: underline;    
-    text-underline-position: under;
-    font-weight: bold;
-}
-
-.nav > .nav-item > a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #f06292;    
-}
-
-
-#logo>img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /*    border-left: 2px solid #f06292;
-        border-right: 2px solid #f06292;*/
-}
-
 .copyright-text {
     font-size: 15px;
-}
-
-.line {     
-    margin-left: 15px; 
-
-    margin-right: 15px;
 }
 
 .form-container {
@@ -61,8 +10,76 @@ body * {
 
 .filter-form {
     width: 100%;
-    text-align: center;    
+    text-align: left;    
+    border: 1px solid #b3aca7;
 }
+.filter-form .form-title > h2{
+    text-align: center; 
+    color: #555;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+}
+.filter-form .underline {
+    border-bottom: solid 2px #474544;
+    margin: 0.2rem auto;
+    margin-bottom: 10px;
+    width: 80px;    
+}
+.subject {
+    width: 80%;
+    margin: 0 auto;
+    padding-top:15px !important;
+    padding-bottom: 15px !important;
+}
+.subject label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.filter-form input[type='text'],.filter-form [type='email'], .filter-form select, textarea {
+    background: none;
+    border: none;
+    border-bottom: solid 1px #b3aca7;
+    color: #666;
+    font-size: 1.000em;
+    font-weight: 400;
+    letter-spacing: 3px;    
+    width: 100%;        
+    padding: 0.25rem 0 0.5em 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.filter-form select {
+    position: relative;
+    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;          
+}   
+
+.filter-form select option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    letter-spacing: 3px;
+    padding: 0px 2px 1px;
+}
+
+.filter-form select::-ms-expand {
+    /*    display: none;*/
+}
+
 .filter-form * {  
     font-size: 17px;
 }
@@ -90,14 +107,12 @@ body * {
 }
 
 .result-title {
-    border-top: 1px solid;
-    border-bottom: 1px solid;
     margin-top:5px;
     margin-bottom:5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: #e91e63;
-    color: white;
+    background: transparent;
+    color: #555;
     font-size: 1.2rem;
 }
 
@@ -111,23 +126,29 @@ body * {
 }
 
 .outline-button {
-    color: #f06292;
-    font-weight: bolder;
-    border-color: #f06292;
-    border-style: solid;
-    background: transparent;
-    border-width: 2px;
-    border-radius: 22px;
-    padding: 10px 40px;
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
     text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 .outline-button:hover{
-    background: #FF1493;   
-    color: white; 
+    background: #474544;
+    color: #F2F3EB;
 }
 
-.outline-button:focus{
-    border-radius: 22px;
+.outline-button:focus{    
 }
 
 .paging {
@@ -145,12 +166,12 @@ body * {
     display: inline-block;
 }
 .paging a:hover {
-    background: #FF1493;   
+    background: #474544;   
     color: white; 
 }
 
 .paging a.active {
-    background: #FF1493;
+    background: #474544;
     color: white; 
 }
 
@@ -180,7 +201,3 @@ hr.line-break {
     padding-top: 200px;
 }
 
-
-footer {
-    padding: 10px 0;
-}

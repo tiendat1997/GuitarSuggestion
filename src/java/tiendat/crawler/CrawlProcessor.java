@@ -30,11 +30,12 @@ public class CrawlProcessor implements Serializable {
     public void crawl(String realPath) {
         String resultFilePath;
         String xmlConfigPath;
-        String xslPath;
-        System.out.println("REALPATH: " + realPath);
-
-        xmlConfigPath = CrawlCommon.CONFIG_WEBCRAWL;
-        
+        String xslPath;        
+        xmlConfigPath = CrawlCommon.CONFIG_WEBCRAWL;   
+        // TONG KHO NHAC CU
+        resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_tongkhonhaccu.xml";
+        xslPath = CrawlCommon.XSL_TONGKHO_NHACCU;
+        runCrawl(xmlConfigPath, xslPath,resultFilePath, realPath);
         // GOLDMUSIC
         resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_goldmusic.xml";
         xslPath = CrawlCommon.XSL_GOLDMUSIC;
@@ -42,11 +43,7 @@ public class CrawlProcessor implements Serializable {
         // NHACCUTIENDAT
         resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_nhaccu_tiendat.xml";
         xslPath = CrawlCommon.XSL_NHACCU_TIENDAT;
-        runCrawl(xmlConfigPath, xslPath, resultFilePath, realPath);
-        //DUY GUITAR
-        resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_duy_guitar.xml";
-        xslPath = CrawlCommon.XSL_DUYGUITAR;
-        runCrawl(xmlConfigPath, xslPath, resultFilePath, realPath);
+        runCrawl(xmlConfigPath, xslPath, resultFilePath, realPath);        
         //BADON DUITAR       
         resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_badon_guitar.xml";
         xslPath = CrawlCommon.XSL_BADONGUITAR;
@@ -54,6 +51,10 @@ public class CrawlProcessor implements Serializable {
         // GUITAR_STATION 
         resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_guitar_station.xml";
         xslPath = CrawlCommon.XSL_GUITAR_STATION;
+        runCrawl(xmlConfigPath, xslPath, resultFilePath, realPath);
+        //DUY GUITAR
+        resultFilePath = CrawlCommon.PATH_XML_OUTPUT + "output_duy_guitar.xml";
+        xslPath = CrawlCommon.XSL_DUYGUITAR;
         runCrawl(xmlConfigPath, xslPath, resultFilePath, realPath);
     }
 

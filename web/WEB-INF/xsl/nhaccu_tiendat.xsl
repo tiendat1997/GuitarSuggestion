@@ -7,29 +7,51 @@
     <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
     <xsl:template match="t:categories" xmlns="http://tiendat.io/schema/categories">
         <xsl:element name="categories">
+            <!-- GUITAR -->
             <xsl:variable name="doc" select="document(@link_nhaccu_tiendat)"/>
-            <xsl:variable name="guitarCategories" select="$doc//div[@id='left_column']//div[@class='box-content box-category']"/>                        
-            <xsl:for-each select="$guitarCategories/div">               
-                <xsl:if test="@class='child open'">
-                    <xsl:variable name="cateLink" select="a"/>
-                    <xsl:element name="category" xmlns="http://tiendat.io/schema/category">
-                        <xsl:variable name="cateName" select="$cateLink"/>
-                        <xsl:variable name="cateHref" select="substring($cateLink/@href,1,string-length($cateLink/@href)-1)"/>
-                        <xsl:attribute name="categoryName">
-                            <xsl:value-of select="$cateName"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="link">                            
-                            <xsl:value-of select="$cateHref"/>
-                        </xsl:attribute>    
-                        <xsl:variable name="detailCategory" select="document($cateHref)"/>    
-                        <xsl:call-template name="guitarList">
-                            <xsl:with-param name="typeName"  select="$cateName" />
-                            <xsl:with-param name="aElement" select="$detailCategory//div[@class='category']//div[@class='item']/a[1]"/>
-                        </xsl:call-template>      
-                    </xsl:element>          
-                </xsl:if>
+            <xsl:variable name="guitarCategories" select="$doc//div[@id='left_column']//div[@class='box-content box-category']"/>
+            <xsl:for-each select="$guitarCategories/div">                
+                <xsl:variable name="cateLink" select="a"/>
+                <xsl:element name="category" xmlns="http://tiendat.io/schema/category">
+                    <xsl:variable name="cateName" select="$cateLink"/>
+                    <xsl:variable name="cateHref" select="substring($cateLink/@href,1,string-length($cateLink/@href)-1)"/>
+                    <xsl:attribute name="categoryName">
+                        <xsl:value-of select="$cateName"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="link">                            
+                        <xsl:value-of select="$cateHref"/>
+                    </xsl:attribute>    
+                    <xsl:variable name="detailCategory" select="document($cateHref)"/>    
+                    <xsl:call-template name="guitarList">
+                        <xsl:with-param name="typeName"  select="$cateName" />
+                        <xsl:with-param name="aElement" select="$detailCategory//div[@class='category']//div[@class='item']/a[1]"/>
+                    </xsl:call-template>      
+                </xsl:element>                          
             </xsl:for-each>
-        </xsl:element>
+            <!-- END GUITAR -->
+            <!-- UKULELE -->
+            <xsl:variable name="ukuDoc" select="document(@link_nhaccu_tiendat_ukulele)"/>
+            <xsl:variable name="ukuCategories" select="$ukuDoc//div[@id='left_column']//div[@class='box-content box-category']"/>
+            <xsl:for-each select="$ukuCategories/div">                
+                <xsl:variable name="cateLink" select="a"/>
+                <xsl:element name="category" xmlns="http://tiendat.io/schema/category">
+                    <xsl:variable name="cateName" select="$cateLink"/>
+                    <xsl:variable name="cateHref" select="substring($cateLink/@href,1,string-length($cateLink/@href)-1)"/>
+                    <xsl:attribute name="categoryName">
+                        <xsl:value-of select="$cateName"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="link">                            
+                        <xsl:value-of select="$cateHref"/>
+                    </xsl:attribute>    
+                    <xsl:variable name="detailCategory" select="document($cateHref)"/>    
+                    <xsl:call-template name="guitarList">
+                        <xsl:with-param name="typeName"  select="$cateName" />
+                        <xsl:with-param name="aElement" select="$detailCategory//div[@class='category']//div[@class='item']/a[1]"/>
+                    </xsl:call-template>      
+                </xsl:element>                          
+            </xsl:for-each>
+            <!-- END UKULELE -->            
+        </xsl:element>        
     </xsl:template>
     
     <xsl:template name="guitarList">        

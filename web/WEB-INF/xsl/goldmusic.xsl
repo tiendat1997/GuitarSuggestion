@@ -7,8 +7,9 @@
     <xsl:output method="xml" omit-xml-declaration="yes" indent="yes"/>
     <xsl:template match="t:categories" xmlns="http://tiendat.io/schema/categories">
         <xsl:element name="categories">
+            <!-- GUITAR -->
             <xsl:variable name="doc" select="document(@link_goldmusic)"/>
-            <xsl:variable name="guitarCategories" select="($doc//ul[@class='box-category'])[2]/li"/>
+            <xsl:variable name="guitarCategories" select="$doc//ul[@class='box-category']/li"/>
             <xsl:for-each select="$guitarCategories">
                 <xsl:variable name="cateLink" select="a"/>
                 <xsl:element name="category" xmlns="http://tiendat.io/schema/category">
@@ -28,6 +29,13 @@
                     </xsl:call-template>
                 </xsl:element>
             </xsl:for-each>
+            <!-- END GUITAR -->
+            <!-- UKULELE --> 
+            <xsl:variable name="ukuDoc" select="document(@link_goldmusic_ukulele)"/>
+            <xsl:element name="category" xmlns="http://tiendat.io/schema/category">
+                
+            </xsl:element>
+            <!-- END UKULELE -->
         </xsl:element>
     </xsl:template>
     

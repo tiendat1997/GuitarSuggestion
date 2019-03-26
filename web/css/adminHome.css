@@ -1,0 +1,28 @@
+.nav {    
+    background: #0A0A0A
+}
+.nav > div {    
+    font-size: 1.2rem;
+}
+.nav .nav-title {
+    display: inline-block;
+    color: #EEEEEE;
+    border:none;
+}
+.nav .right-nav {
+    display: inline-block;
+    text-align: right;
+    border:none;
+}
+.nav .right-nav a {
+    color: #eee;
+    text-decoration: none;
+}
+
+
+.main .crawl-form input[type="submit"]{
+    padding: 10px 50px;
+    border: none;
+    background: #0A0A0A;
+    color: white;
+}

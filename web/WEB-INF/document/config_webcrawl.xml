@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <categories xmlns="http://tiendat.io/schema/categories"                  
+            link_tongkhonhaccu="https://tongkhonhaccu.com/guitar.html"
             link_guitar_badon="http://guitarbadon.vn"
             link_gutiar_station="https://guitar.station.vn/product-category/dan-guitar"
             link_nhaccu_tiendat="https://nhaccutiendat.vn/dan-guitar"
+            link_nhaccu_tiendat_ukulele="https://nhaccutiendat.vn/dan-ukulele"
             link_duy="https://guitartphcm.com"
             link_goldmusic="https://goldmusic.vn/guitar-acoustic"
+            link_goldmusic_ukulele="https://goldmusic.vn/mua-ban-dan-ukulele"
             schemaCategory="http://tiendat.io/schema/category"
             schemaGuitar="http://tiendat.io/schema/guitar">
 </categories>

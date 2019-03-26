@@ -9,12 +9,29 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin Home Page</title>
+        <title>Admin Home</title>
+        <link rel="stylesheet" type="text/css" href="css/grid.css"/>
+        <link rel="stylesheet" type="text/css" href="css/adminHome.css"/>
     </head>
-    <body>
-        <h1>Admin home</h1>
-        <form method="POST" action="AdminServlet">
-            <input type="submit" name="btAction" value="Crawl"/>
-        </form>
+    <body>        
+        <div class="container nav">            
+            <div class="row">
+                <div class="col-8 nav-title">
+                    Admin Dashboard
+                </div>            
+                <div class="col-4 right-nav">
+                    <a href="LogoutServlet">Logout</a>
+                </div>
+            </div>            
+        </div>
+        <div class="container main">          
+            <div class="row">       
+                <div class="col-12">
+                    <form method="POST" action="AdminServlet" class="crawl-form">
+                        <input type="submit" name="btAction" value="Crawl"/>
+                    </form>                  
+                </div>                
+            </div>            
+        </div>        
     </body>
 </html>

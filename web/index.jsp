@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <img src="../build/web/image/guitar/Image-0.png" alt=""/>
         <h1>Hello World!</h1>
     </body>
 </html>

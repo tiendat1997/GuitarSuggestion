@@ -7,6 +7,7 @@ package tiendat.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,18 +16,20 @@ import javax.servlet.http.HttpServletResponse;
 import tiendat.crawler.CrawlProcessor;
 
 public class CrawlServlet extends HttpServlet {
-
+    private static final String ADMIN_HOME = "adminHome.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String url = ADMIN_HOME;
         try {
             ServletContext context = request.getServletContext();
             String realPath = context.getRealPath("/");
             CrawlProcessor crawler = new CrawlProcessor();
             crawler.crawl(realPath);
+            response.sendRedirect(url);            
         } finally {
-            out.close();
+            out.close();            
         }
     }
 

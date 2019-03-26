@@ -35,7 +35,10 @@ public class MyURIResolver implements URIResolver, Serializable {
         URLConnection connection = null;
         InputStream is = null;
         StreamSource ss = null;
-        if (href != null && (href.indexOf(CrawlCommon.URL_GUITAR_DUY) == 0
+        if (href != null
+                && href.contains("images?name=") == false
+                && (href.indexOf(CrawlCommon.URL_GUITAR_DUY) == 0
+                || href.indexOf(CrawlCommon.URL_TONGKHO_NHACCU) == 0
                 || href.indexOf(CrawlCommon.URL_GUITAR_BADON) == 0
                 || href.indexOf(CrawlCommon.URL_GUITAR_STATION) == 0
                 || href.indexOf(CrawlCommon.URL_NHACCU_TIENDAT) == 0
@@ -49,7 +52,6 @@ public class MyURIResolver implements URIResolver, Serializable {
                 System.out.println("Connect: " + href);
                 is = connection.getInputStream();
                 ss = preProcessInputStream(is);
-                                                
             } catch (MalformedURLException ex) {
                 Logger.getLogger(MyURIResolver.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {

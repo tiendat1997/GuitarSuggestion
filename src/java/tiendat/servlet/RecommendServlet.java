@@ -17,7 +17,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import tiendat.dao.GuitarDAO;
+import tiendat.dao.SearchGuitarDAO;
 import tiendat.dto.RecommendResultDTO;
+import tiendat.dto.SearchGuitarDTO;
 import tiendat.ultility.XMLUltils;
 
 /**
@@ -32,11 +34,15 @@ public class RecommendServlet extends HttpServlet {
         //PrintWriter out = response.getWriter();
         OutputStream os = response.getOutputStream();
         GuitarDAO guitarDao;
+        SearchGuitarDAO searchDao; 
         try {
             String genre = request.getParameter("music-genre");
             String bodyStyle = request.getParameter("body-style");
             String priceLevel = request.getParameter("price-level");
-            String origin = request.getParameter("origin");            
+            String origin = request.getParameter("origin");         
+            searchDao = new SearchGuitarDAO();
+            SearchGuitarDTO searchDto = new SearchGuitarDTO(genre, bodyStyle, priceLevel, origin);
+            searchDao.addSearchGuitar(searchDto);
             guitarDao = new GuitarDAO();
             RecommendResultDTO recommendDto = guitarDao.recommendGuitar(genre, bodyStyle, priceLevel, origin);
             XMLUltils.marshallToTransfer(recommendDto, os);
@@ -48,7 +54,7 @@ public class RecommendServlet extends HttpServlet {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(RecommendServlet.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-
+            
         }
     }
 

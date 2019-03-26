@@ -41,7 +41,7 @@
                 let url = 'DispatchServlet';
                 let params = MyUtils.getFormParams(searchForm, objForm);
                 MyUtils.callXhr('POST', url, params, function (dom) {
-                    let guitars = dom.getElementsByTagName("guitar");
+                    let guitars = dom.getElementsByTagName("guitar");                    
                     console.log(guitars);
                     for (let i = 0; i < guitars.length; i++) {
                         console.log(guitars[i]);

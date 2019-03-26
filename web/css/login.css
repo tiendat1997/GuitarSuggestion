@@ -1,0 +1,36 @@
+.form-container{
+    margin: 0 auto;
+    border: 1px solid #555 !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25vh;
+}
+
+.form .title {
+    width: 100%;
+    text-align: center;
+}
+
+.form .label {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100%;
+}
+.form .textfield{
+    width: 100%;
+}
+
+.form input[type="submit"]{
+    float:right;
+}
+.form input[type="reset"]{
+    float:left;
+}
+.form input[type="submit"], .form input[type="reset"]{
+    padding: 3% 10%;
+    border: none;
+    background: #0A0A0A;
+    color: white;
+}
+

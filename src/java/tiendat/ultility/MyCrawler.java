@@ -12,7 +12,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.net.URLEncoder;
 import java.sql.SQLException;
+import java.text.Normalizer;
+import java.util.UUID;
+import java.util.regex.Pattern;
 import javax.naming.NamingException;
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.Transformer;
@@ -23,6 +27,7 @@ import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID;
 import tiendat.common.CrawlCommon;
 import tiendat.dao.AttributeDAO;
 import tiendat.dao.CategoryDAO;
@@ -37,6 +42,17 @@ import tiendat.generatedObject.Guitar;
  * @author DATTTSE62330
  */
 public class MyCrawler implements Serializable {
+
+    public static String covertStringToURL(String str) {
+        try {
+            String temp = Normalizer.normalize(str, Normalizer.Form.NFD);
+            Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+            return pattern.matcher(temp).replaceAll("").toLowerCase().replaceAll(" ", "-").replaceAll("đ", "d");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
     public static void saveToXMLFile(DOMResult dom, String resultFileName) throws TransformerConfigurationException, TransformerException, FileNotFoundException {
 
@@ -85,13 +101,26 @@ public class MyCrawler implements Serializable {
                             System.out.println(guitar.getPrice());
                             System.out.println(guitar.getCategory());
                             System.out.println(guitar.getImageUrl());
+                            
+//                            UUID uniqueId = UUID.randomUUID();
+//                            String imageName = uniqueId.toString();
+//
+//                            String rootUrl = realPath.replace("build\\web\\", "");
+//                            String outImageUrl = rootUrl + CrawlCommon.URL_IMAGE + "/" + imageName + ".png";                            
+//                            String imgUrl = "images?name=" + imageName + ".png";
+//                            ImageUtil.saveImageFromURL(guitar.getImageUrl(), outImageUrl);
+//                            guitar.setImageUrl(imgUrl);
                             guitarDao.addGuitar(guitar);
                             // GET ID OF GUITAR 
                             int guitarId = guitarDao.getGuitarByName(guitar.getName());
                             // ADD ATTRIBUTE
                             for (Attribute attr : guitar.getAttributes().getAttribute()) {
                                 System.out.println("Attribute " + attr.getName() + " " + attr.getContent());
-                                attrDao.addAttribute(attr, guitarId);
+                                if (!attr.getName().trim().isEmpty() && !attr.getContent().trim().isEmpty()){                                                                        
+                                    attr.setName(StringUtil.replaceCodeCharacter(attr.getName()));
+                                    attr.setContent(StringUtil.replaceCodeCharacter(attr.getContent()));
+                                    attrDao.addAttribute(attr, guitarId);
+                                }
                             }
                         }
                     }

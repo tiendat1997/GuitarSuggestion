@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <display-name>GuitarSuggestion</display-name>
+    <servlet>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>tiendat.api</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet>
         <servlet-name>DispatchServlet</servlet-name>
         <servlet-class>tiendat.servlet.DispatchServlet</servlet-class>
@@ -28,6 +38,26 @@
         <servlet-name>TopGuitarServlet</servlet-name>
         <servlet-class>tiendat.servlet.TopGuitarServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>tiendat.servlet.ImageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StatisticServlet</servlet-name>
+        <servlet-class>tiendat.servlet.StatisticServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TrendServlet</servlet-name>
+        <servlet-class>tiendat.servlet.TrendServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BestGuitarServlet</servlet-name>
+        <servlet-class>tiendat.servlet.BestGuitarServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>tiendat.servlet.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DispatchServlet</servlet-name>
         <url-pattern>/DispatchServlet</url-pattern>
@@ -55,6 +85,30 @@
     <servlet-mapping>
         <servlet-name>TopGuitarServlet</servlet-name>
         <url-pattern>/TopGuitarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/images</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StatisticServlet</servlet-name>
+        <url-pattern>/StatisticServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TrendServlet</servlet-name>
+        <url-pattern>/TrendServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BestGuitarServlet</servlet-name>
+        <url-pattern>/BestGuitarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

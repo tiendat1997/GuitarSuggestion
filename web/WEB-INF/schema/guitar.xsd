@@ -26,7 +26,7 @@
                 </xs:element>
                 <xs:element name="price" type="xs:decimal" default="0"></xs:element>
                 <xs:element name="imageUrl" type="xs:anyURI" ></xs:element>                  
-                <xs:element name="weightedScore" type="xs:decimal"></xs:element>
+                <xs:element name="weightedScore" type="xs:double"></xs:element>
                 <xs:element name="attributes">
                     <xs:complexType>
                         <xs:sequence>

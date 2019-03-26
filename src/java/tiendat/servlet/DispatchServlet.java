@@ -22,19 +22,24 @@ public class DispatchServlet extends HttpServlet {
     private final String HOME_PAGE = "home.jsp";
     private final String RECOMMEND_SERVLET = "RecommendServlet";
     private final String TOP_GUITAR_SERVLET = "TopGuitarServlet";
+    private final String STATISTIC_SERVLET = "StatisticServlet";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 //        PrintWriter out = response.getWriter();
-        String url = HOME_PAGE;
+        String url = HOME_PAGE;        
         try {            
             String btAction = request.getParameter("btAction");
             if (btAction == null) {
-                
+                request.setAttribute("NAV_ACTIVE", 1);
             } else if (btAction.equals("recommend")){
                 url = RECOMMEND_SERVLET;
             } else if (btAction.equals("topguitar")){
+                request.setAttribute("NAV_ACTIVE", 2);
                 url = TOP_GUITAR_SERVLET;
+            } else if (btAction.equals("statistic")){
+                request.setAttribute("NAV_ACTIVE", 3);
+                url = STATISTIC_SERVLET;
             }
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

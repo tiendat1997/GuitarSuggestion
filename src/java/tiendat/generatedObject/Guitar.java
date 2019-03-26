@@ -85,13 +85,13 @@ public class Guitar implements Serializable, Comparable<Guitar>{
     @XmlElement(required = false)
     protected int id;
     @XmlElement(required = false)
-    protected float weightedScore;
+    protected double weightedScore;
 
-    public float getWeightedScore() {
+    public double getWeightedScore() {
         return weightedScore;
     }
 
-    public void setWeightedScore(float weightedScore) {
+    public void setWeightedScore(double weightedScore) {
         this.weightedScore = weightedScore;
     }
              

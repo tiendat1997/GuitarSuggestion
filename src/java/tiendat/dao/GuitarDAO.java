@@ -11,14 +11,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.naming.NamingException;
 import tiendat.common.GuitarType;
 import tiendat.dto.RecommendResultDTO;
+import tiendat.dto.StatisticDTO;
+import tiendat.dto.StatisticTypeDTO;
 import tiendat.generatedObject.Attribute;
 import tiendat.generatedObject.Guitar;
 import tiendat.ultility.DBUtils;
+import tiendat.wsm.Alternative;
+import tiendat.wsm.WeightedProductModel;
+import tiendat.wsm.WeightedSumModel;
 
 /**
  *
@@ -26,18 +33,95 @@ import tiendat.ultility.DBUtils;
  */
 public class GuitarDAO {
 
-    public RecommendResultDTO getTopGuitar() throws NamingException, SQLException, ClassNotFoundException {
+    public StatisticTypeDTO getGuitarStatistics(String typeName) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
-        PreparedStatement stm = null;        
+        CallableStatement stm = null;
+        ResultSet rs = null;
+        StatisticTypeDTO type = null;
+        try {
+            con = DBUtils.createConnection();
+
+            String sql = "{call StatisticGuitarBy" + typeName + "}";
+            stm = con.prepareCall(sql);
+            rs = stm.executeQuery();
+            type = new StatisticTypeDTO(typeName);
+            List<StatisticDTO> items = new ArrayList<>();
+            while (rs.next()) {
+                String name = rs.getNString("name");
+                int count = rs.getInt("count");
+                StatisticDTO item = new StatisticDTO(name, count);
+                items.add(item);
+            }
+            type.setItems(items);
+            return type;
+        } finally {
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+    }
+    public RecommendResultDTO getBestGuitar(int cateId) throws SQLException, NamingException, ClassNotFoundException{ 
+        Connection con = null;
+        PreparedStatement stm = null;
         ResultSet rs = null;
         AttributeDAO attrDao = new AttributeDAO();
         RecommendResultDTO recommendResult = new RecommendResultDTO();
         try {
             con = DBUtils.createConnection();
-            String sql = "{call GetTopGuitarByPrice(?,?)}";            
+            String sql = "{call GetTopGuitarByPrice(?,?)}";
             stm = con.prepareCall(sql);
-            stm.setInt(1, 20);
-            stm.setInt(2, GuitarType.ACOUSTIC);
+            stm.setInt(1, 50);
+            stm.setInt(2, cateId);
+            rs = stm.executeQuery();
+            List<Alternative> alternativeList = new ArrayList();
+            while (rs.next()) {
+                int id = rs.getInt("Id");
+                String name = rs.getString("Name");
+                String category = rs.getString("Category");
+                BigDecimal price = rs.getBigDecimal("Price");
+                String imageUrl = rs.getString("ImageUrl");
+                List<Attribute> attrList = attrDao.getAttributeByGuitarId(id);
+                Guitar guitarDto = new Guitar(id, name, category, price, imageUrl, new Guitar.Attributes(attrList));
+                Alternative alternative = preNormalization(guitarDto);
+                alternativeList.add(alternative);                
+            }   
+            WeightedProductModel wpm = new WeightedProductModel(alternativeList);
+            wpm.calculate();
+
+            for (Alternative alt : alternativeList) {
+                Guitar guitar = alt.getGuitar(); // GET GUITAR THAT HAS THE SCORED
+                recommendResult.getGuitar().add(guitar);
+            }
+            Collections.sort(recommendResult.getGuitar());
+            // GET FIRST 10 ELEMENT;
+            List<Guitar> topGuitars = recommendResult.getGuitar().stream().limit(10).collect(Collectors.toList()); 
+            recommendResult.setGuitar(topGuitars);
+        } finally {
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return recommendResult;
+    }
+
+    public RecommendResultDTO getTopGuitar(int cateId) throws NamingException, SQLException, ClassNotFoundException {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        AttributeDAO attrDao = new AttributeDAO();
+        RecommendResultDTO recommendResult = new RecommendResultDTO();
+        try {
+            con = DBUtils.createConnection();
+            String sql = "{call GetTopGuitarByPrice(?,?)}";
+            stm = con.prepareCall(sql);
+            stm.setInt(1, 10);
+            stm.setInt(2, cateId);
             rs = stm.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("Id");
@@ -46,8 +130,7 @@ public class GuitarDAO {
                 BigDecimal price = rs.getBigDecimal("Price");
                 String imageUrl = rs.getString("ImageUrl");
                 List<Attribute> attrList = attrDao.getAttributeByGuitarId(id);
-                Guitar.Attributes attributes = new Guitar.Attributes(attrList);
-                Guitar guitarDto = new Guitar(id, name, category, price, imageUrl, attributes);
+                Guitar guitarDto = new Guitar(id, name, category, price, imageUrl, new Guitar.Attributes(attrList));
                 recommendResult.getGuitar().add(guitarDto);
             }
         } finally {
@@ -60,79 +143,241 @@ public class GuitarDAO {
         }
         return recommendResult;
     }
+    /* DOES NOT INCLUDE SEARCH ATTRIBUTE */
+    private Alternative preNormalization(Guitar guitar){
+        Alternative alternative;
+        double vPrice = 0;
+        double vWood = 0;
+        double vBrand = 0;
+        double vOrigin = 0;
+        vPrice = guitar.getPrice().doubleValue();
 
-    // WSM : weighted sum model
-    private double getScoreFromWSM(Guitar guitar, String cateName, double minPrice, double maxPrice, String bodyStyle, boolean isVietnam) {
-        double score = 0; 
-        // SET UP criteria 
-        double genrePercent = 0.45;
-        double pricePercent = 0.1;
-        double stylePercent = 0.15;
-        double woodPercent = 0.15;
-        double originPercent = 0.1;
-        double brandPercent = 0.05; 
-
-        if (guitar.getCategory().toLowerCase().equals(cateName.toLowerCase())) {
-            score += genrePercent * 10;
-        }
-        if (guitar.getPrice().doubleValue() >= minPrice && guitar.getPrice().doubleValue() <= maxPrice) {
-            score += pricePercent * 10;
-        }
-        
         String attrStr = guitar.getAttributes().toString().toLowerCase();
-        if (bodyStyle.equals("full") && (attrStr.contains("đầy") || attrStr.contains("dreadnought"))){
-            score += stylePercent * 10;
-        }
-        
-        if (bodyStyle.equals("cutaway") && (attrStr.contains("khuyết"))) {
-            score += stylePercent * 10;
-        }
-        
-        if ((attrStr.contains("việt") && isVietnam)
-                || (!attrStr.contains("việt") && !isVietnam)) {
-            score += originPercent * 10;
-        }
-        // Wood style 
+        /* WOOD */
         // GỖ CAO CẤP
         if (attrStr.contains("cẩm lai") || attrStr.contains("hồng sắc") || attrStr.contains("mun")
                 || attrStr.contains("rosewood") || attrStr.contains("óc chó") || attrStr.contains("walnut")
-                || attrStr.contains("thích") || attrStr.contains("maple") || attrStr.contains("cẩm")) {
-            score += woodPercent * 9;
+                || attrStr.contains("thích") || attrStr.contains("maple") || attrStr.contains("cẩm")
+                || attrStr.contains("ocbolo") || attrStr.contains("zitricote") || attrStr.contains("ovangkol")
+                || attrStr.contains("hawaiian koa") || attrStr.contains("ovangkol")) {
+            vWood += 3;
         } // GÕ TRUNG CẤP
         else if (attrStr.contains("điệp") || attrStr.contains("còng") || attrStr.contains("thông")
                 || attrStr.contains("cườm") || attrStr.contains("dái ngựa") || attrStr.contains("mahogany")
                 || attrStr.contains("keo") || attrStr.contains("koa") || attrStr.contains("tuyết tùng")
-                || attrStr.contains("cồng") || attrStr.contains("còng") || attrStr.contains("thao lao")
-                || attrStr.contains("sitka") || attrStr.contains("cedar") || attrStr.contains("gụ")
-                || attrStr.contains("spruce ")) {
-            score += woodPercent * 7;
+                || attrStr.contains("cồng") || attrStr.contains("thao lao") || attrStr.contains("sitka")
+                || attrStr.contains("cedar") || attrStr.contains("gụ") || attrStr.contains("spruce")) {
+            vWood += 2;
         } // GỖ PHỔ THÔNG
-        else if (attrStr.contains("hồng đào") || attrStr.contains("laminate") || attrStr.contains("nato")) {
-            score += woodPercent * 5;
-        }
-
-        // GỖ NGUYÊN MIẾNG                
-        if (attrStr.contains("solid") || attrStr.contains("nguyên")) {
-            score += woodPercent * 1;
-        }
-        if (attrStr.contains("ép") || attrStr.contains("ván")) {
-            score -= woodPercent * 2;
-        }
-
-        // BRANING SCORE 
-        String nameLowercase = guitar.getName().toLowerCase();
-        if (nameLowercase.contains("taylor") || nameLowercase.contains("suzuki")
-                || nameLowercase.contains("yamaha") || nameLowercase.contains("fender")
-                || nameLowercase.contains("takamine") || nameLowercase.contains("martin")
-                || nameLowercase.contains("tanglewood") || nameLowercase.contains("elixir")) {
-            score += brandPercent * 8;
+        else if (attrStr.contains("hồng đào") || attrStr.contains("laminate")
+                || attrStr.contains("nato") 
+                || attrStr.contains("sapele")) {
+            vWood += 1;
         } else {
-            score += brandPercent * 4;
+            vWood += 1;
+        }
+        
+        // GỖ THỊT 
+        if (attrStr.contains("nguyên") || attrStr.contains("solid") || attrStr.contains("thịt")){
+            vWood += 1;
+        }
+        // GỖ ÉP
+        if (attrStr.contains("ván") || attrStr.contains("ép")){
+            vWood -= 1;
+        }
+        /* Branding */
+        String nameStr = guitar.getName().toLowerCase();
+
+        if (nameStr.contains("martin")
+                || nameStr.contains("taylor")
+                || nameStr.contains("fender")
+                || nameStr.contains("samick")
+                || nameStr.contains("yamaha")
+                || nameStr.contains("suzuki")
+                || nameStr.contains("takamine")
+                || nameStr.contains("Ibanez")
+                || nameStr.contains("almansa")) {
+            vBrand = 3;
+        }
+        if (nameStr.contains("cordoba")
+                || nameStr.contains("cort")
+                || nameStr.contains("tanglewood")
+                || nameStr.contains("aria")
+                || nameStr.contains("sigma")
+                || nameStr.contains("stagg")
+                || nameStr.contains("everest")
+                || nameStr.contains("saga")) {
+            vBrand = 2;
+        } else if (nameStr.contains("lazer")
+                || nameStr.contains("kapok")
+                || nameStr.contains("caravan")
+                || nameStr.contains("epiphone")
+                || nameStr.contains("poshman")
+                || nameStr.contains("ng")
+                || nameStr.contains("hohner")
+                || nameStr.contains("kepma")
+                || nameStr.contains("mantic")
+                || nameStr.contains("morrision")
+                || nameStr.contains("rosen")) {
+            vBrand = 1;
+        } else {
+            vBrand = 1;
         }
 
-        return score;
+        /* ORIGIN */
+        if (attrStr.contains("mỹ")
+                || attrStr.contains("usa")
+                || attrStr.contains("america")
+                || attrStr.contains("nhật")
+                || attrStr.contains("japan")
+                || attrStr.contains("tây ban nha")
+                || attrStr.contains("mexico")
+                || attrStr.contains("italy")
+                || attrStr.contains("bỉ")) {
+            vOrigin = 3;
+        } else if (attrStr.contains("việt nam") 
+                || attrStr.contains("vietnam")
+                || attrStr.contains("trung quốc")
+                || attrStr.contains("china")
+                || attrStr.contains("taiwan")
+                || attrStr.contains("indonesia")) {
+            vOrigin = 1;
+        } else {
+            vOrigin = 2;
+        }
+        
+        alternative = new Alternative(guitar, vPrice, vWood, vBrand, vOrigin, vBrand);        
+        return alternative;
     }
+    /* INCLUDE SEARCH ATTRIBUTE */
+    private Alternative preNormalization(Guitar guitar, String cateName, String bodyStyle, boolean isVietnam) {
+        Alternative alternative;
+        double vPrice = 0;
+        double vWood = 0;
+        double vBrand = 0;
+        double vOrigin = 0;
+        double vFitSearch = 0;
 
+        vPrice = guitar.getPrice().doubleValue();
+
+        String attrStr = guitar.getAttributes().toString().toLowerCase();
+        /* WOOD */
+        // GỖ CAO CẤP
+        if (attrStr.contains("cẩm lai") || attrStr.contains("hồng sắc") || attrStr.contains("mun")
+                || attrStr.contains("rosewood") || attrStr.contains("óc chó") || attrStr.contains("walnut")
+                || attrStr.contains("thích") || attrStr.contains("maple") || attrStr.contains("cẩm")
+                || attrStr.contains("ocbolo") || attrStr.contains("zitricote") || attrStr.contains("ovangkol")
+                || attrStr.contains("hawaiian koa") || attrStr.contains("ovangkol")) {
+            vWood += 3;
+        } // GÕ TRUNG CẤP
+        else if (attrStr.contains("điệp") || attrStr.contains("còng") || attrStr.contains("thông")
+                || attrStr.contains("cườm") || attrStr.contains("dái ngựa") || attrStr.contains("mahogany")
+                || attrStr.contains("keo") || attrStr.contains("koa") || attrStr.contains("tuyết tùng")
+                || attrStr.contains("cồng") || attrStr.contains("thao lao") || attrStr.contains("sitka")
+                || attrStr.contains("cedar") || attrStr.contains("gụ") || attrStr.contains("spruce")) {
+            vWood += 2;
+        } // GỖ PHỔ THÔNG
+        else if (attrStr.contains("hồng đào") || attrStr.contains("laminate")
+                || attrStr.contains("nato") 
+                || attrStr.contains("sapele")) {
+            vWood += 1;
+        } else {
+            vWood += 1;
+        }
+        
+        // GỖ THỊT 
+        if (attrStr.contains("nguyên") || attrStr.contains("solid") || attrStr.contains("thịt")){
+            vWood += 1;
+        }
+        // GỖ ÉP
+        if (attrStr.contains("ván") || attrStr.contains("ép")){
+            vWood -= 1;
+        }
+        /* Branding */
+        String nameStr = guitar.getName().toLowerCase();
+
+        if (nameStr.contains("martin")
+                || nameStr.contains("taylor")
+                || nameStr.contains("fender")
+                || nameStr.contains("samick")
+                || nameStr.contains("yamaha")
+                || nameStr.contains("suzuki")
+                || nameStr.contains("takamine")
+                || nameStr.contains("Ibanez")
+                || nameStr.contains("almansa")) {
+            vBrand = 3;
+        }
+        if (nameStr.contains("cordoba")
+                || nameStr.contains("cort")
+                || nameStr.contains("tanglewood")
+                || nameStr.contains("aria")
+                || nameStr.contains("sigma")
+                || nameStr.contains("stagg")
+                || nameStr.contains("everest")
+                || nameStr.contains("saga")) {
+            vBrand = 2;
+        } else if (nameStr.contains("lazer")
+                || nameStr.contains("kapok")
+                || nameStr.contains("caravan")
+                || nameStr.contains("epiphone")
+                || nameStr.contains("poshman")
+                || nameStr.contains("ng")
+                || nameStr.contains("hohner")
+                || nameStr.contains("kepma")
+                || nameStr.contains("mantic")
+                || nameStr.contains("morrision")
+                || nameStr.contains("rosen")) {
+            vBrand = 1;
+        } else {
+            vBrand = 1;
+        }
+
+        /* ORIGIN */
+        if (attrStr.contains("mỹ")
+                || attrStr.contains("usa")
+                || attrStr.contains("america")
+                || attrStr.contains("nhật")
+                || attrStr.contains("japan")
+                || attrStr.contains("tây ban nha")
+                || attrStr.contains("mexico")
+                || attrStr.contains("italy")
+                || attrStr.contains("bỉ")) {
+            vOrigin = 3;
+        } else if (attrStr.contains("việt nam") 
+                || attrStr.contains("vietnam")
+                || attrStr.contains("trung quốc")
+                || attrStr.contains("china")
+                || attrStr.contains("taiwan")
+                || attrStr.contains("indonesia")) {
+            vOrigin = 1;
+        } else {
+            vOrigin = 2;
+        }
+
+        /* Match Origin */
+        if (isVietnam && (attrStr.contains("việt nam") || attrStr.contains("vietnam"))) {
+            vFitSearch += 1;
+        }
+        if (!isVietnam && (!attrStr.contains("việt nam") && !attrStr.contains("vietnam"))) {
+            vFitSearch += 1;
+        }
+        /* Match Body Style */
+        if (bodyStyle.equals("full") && (attrStr.contains("đầy") || attrStr.contains("dreadnought"))) {
+            vFitSearch += 1;
+        }
+        if (bodyStyle.equals("cutaway") && (attrStr.contains("khuyết") || attrStr.contains("cutaway"))) {
+            vFitSearch += 1;
+        }
+
+        /* Match CATEGORY NAME */
+        if (nameStr.contains(cateName)) {
+            vFitSearch += 1;
+        }
+
+        alternative = new Alternative(guitar, vPrice, vWood, vBrand, vOrigin, vFitSearch);
+        return alternative;
+    }
+   
     public RecommendResultDTO recommendGuitar(String genre, String bodyStyle, String priceLevel, String origin) throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
@@ -143,7 +388,6 @@ public class GuitarDAO {
         RecommendResultDTO recommendResult = new RecommendResultDTO();
         try {
             con = DBUtils.createConnection();
-
             // GET BY GENRE  
             String cateName = "";
             int cateId = 0;
@@ -177,14 +421,14 @@ public class GuitarDAO {
             switch (priceLevel) {
                 case "low":
                     minPrice = 0;
-                    maxPrice = 1500000;
+                    maxPrice = 3500000;
                     break;
                 case "middle":
-                    minPrice = 1500001;
-                    maxPrice = 5000000;
+                    minPrice = 3500000;
+                    maxPrice = 10000000;
                     break;
                 case "high":
-                    minPrice = 5000001;
+                    minPrice = 10000000;
                     break;
                 default:
                     break;
@@ -222,6 +466,9 @@ public class GuitarDAO {
             stm.setBoolean(5, isVietnam); // origin
 
             rs = stm.executeQuery();
+
+            List<Alternative> alternativeList = new ArrayList();
+
             while (rs.next()) {
                 int id = rs.getInt("Id");
                 String name = rs.getString("Name");
@@ -232,11 +479,17 @@ public class GuitarDAO {
                 Guitar.Attributes attributes = new Guitar.Attributes(attrList);
                 Guitar guitarDto = new Guitar(id, name, category, price, imageUrl, attributes);
                 // Processing Score Weigted Score matrix             
-                double weightedScore = this.getScoreFromWSM(guitarDto, cateName, minPrice, maxPrice, bodyStyle, isVietnam);
-                guitarDto.setWeightedScore((float) weightedScore);
-                recommendResult.getGuitar().add(guitarDto);
+                Alternative alternative = preNormalization(guitarDto, cateName, bodyStyle, isVietnam);
+                alternativeList.add(alternative);
             }
 
+            WeightedSumModel wsm = new WeightedSumModel(alternativeList);
+            wsm.calculate();
+
+            for (Alternative alt : alternativeList) {
+                Guitar guitar = alt.getGuitar(); // GET GUITAR THAT HAS THE SCORED
+                recommendResult.getGuitar().add(guitar);
+            }
             Collections.sort(recommendResult.getGuitar());
 
         } finally {
@@ -289,13 +542,15 @@ public class GuitarDAO {
                 stm.setString(4, guitar.getImageUrl());
                 // SET CATEGORY ID 
                 String categoryName = guitar.getCategory().toLowerCase();
-                String guitarName = guitar.getName().toLowerCase();
+                String guitarName = guitar.getName().trim().toLowerCase();
                 int cateId;
                 if (guitarName.contains(GuitarType.ACOUSTIC_STRING)) {
                     cateId = GuitarType.ACOUSTIC;
-                } else if (guitarName.contains(GuitarType.CLASSICAL_STRING)) {
+                } else if (guitarName.contains(GuitarType.CLASSICAL_STRING) || guitarName.contains("cổ điển")) {
                     cateId = GuitarType.CLASSIC;
-                } else if (guitarName.contains(GuitarType.ELECTRIC_STRING) || guitarName.contains(GuitarType.BASS_STRING)) {
+                } else if (guitarName.contains(GuitarType.ELECTRIC_STRING)
+                        || guitarName.contains(GuitarType.BASS_STRING)
+                        || guitarName.contains("điện")) {
                     cateId = GuitarType.ELECTRIC;
                 } else if (guitarName.contains(GuitarType.UKULELE_STRING)) {
                     cateId = GuitarType.UKULELE;
